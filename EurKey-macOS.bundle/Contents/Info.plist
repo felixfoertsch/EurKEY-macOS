@@ -7,7 +7,40 @@
 	<key>CFBundleName</key>
 	<string>EurKEY-macOS</string>
 	<key>CFBundleVersion</key>
-	<string></string>
+	<string>2026.03.03</string>
+	<key>KLInfo_EurKEY v1.2</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
+		<key>TISIconIsTemplate</key>
+		<true/>
+		<key>TISInputSourceID</key>
+		<string>de.felixfoertsch.keyboardlayout.EurKEY-macOS.eurkeyv1.2</string>
+		<key>TISIntendedLanguage</key>
+		<string>en</string>
+	</dict>
+	<key>KLInfo_EurKEY v1.3</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
+		<key>TISIconIsTemplate</key>
+		<true/>
+		<key>TISInputSourceID</key>
+		<string>de.felixfoertsch.keyboardlayout.EurKEY-macOS.eurkeyv1.3</string>
+		<key>TISIntendedLanguage</key>
+		<string>en</string>
+	</dict>
+	<key>KLInfo_EurKEY v1.4</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
+		<key>TISIconIsTemplate</key>
+		<true/>
+		<key>TISInputSourceID</key>
+		<string>de.felixfoertsch.keyboardlayout.EurKEY-macOS.eurkeyv1.4</string>
+		<key>TISIntendedLanguage</key>
+		<string>en</string>
+	</dict>
 	<key>KLInfo_EurKEY v2.0</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>

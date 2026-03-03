@@ -1,0 +1,27 @@
+name: Validate Layouts
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'EurKey-macOS.bundle/**'
+      - 'scripts/**'
+      - 'spec/**'
+  pull_request:
+    paths:
+      - 'EurKey-macOS.bundle/**'
+      - 'scripts/**'
+      - 'spec/**'
+
+jobs:
+  validate:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: validate layouts
+        run: python3 scripts/validate_layouts.py
+
+      - name: build bundle
+        run: bash scripts/build-bundle.sh
