@@ -1,12 +1,10 @@
 # EurKEY-macOS
 
-The Keyboard Layout for Europeans, Coders and Translators. This repo is a fork and contains a **modified verison** of the EurKEY base layout.
+The Keyboard Layout for Europeans, Coders and Translators. This repo is a fork and contains a **modified verison** of the EurKEY base layout. It builds on the official layout. You can find version 1.3, the latest official release, in the bundle as well. See the changelog below for my modifications.
 
-I start versioning my customized edition from 2, since the layout is based on my modified EurKEY v1.4 that I have been using the last few years. The version with slight fixes is now available is called v1.5.
+EurKEY-macOS is a rework targeted at MacBooks with the with pyhiscal English International keyboard (ISO) instead of the ANSI layout from the official upstream. Since it is an ISO layout, it has one additional key (`) and the big Enter key.
 
-EurKEY-macOS is a rework targeted at MacBooks with the with pyhiscal English International keyboard (ISO). Since it is an ISO layout, it has one additional key (`) and the big Enter key.
-
-The keyboard layout should be compatible with the other ISO layouts typically available in Europe (e.g. German ISO). I tested the layout on the current tenkeyless MacBook keyboard (MacBook Air 2024). Working numpad keys are therefore not guaranteed.
+The keyboard layout should be compatible with the other ISO layouts typically available in Europe (e.g. German ISO). However, the printed keys will obviously be different. I tested the layout on the current tenkeyless MacBook keyboard (MacBook Air 2024). Working numpad keys are therefore not guaranteed.
 
 ## Installation
 
@@ -19,7 +17,9 @@ The keyboard layout should be compatible with the other ISO layouts typically av
 
 ## Notes on Ukelele and template icons
 
-I have tried to configure a template icon for the bundle and stumbled onto behaviour that I consider a bug in Ukelele. I tried simply setting a template icon from the GUI using the checkbox, but it never saved it correctly. I had to manually edit `*.bundle/Info.plist` file and set the flag.
+I have tried to configure a template icon for the bundle and stumbled onto behaviour that I consider a bug in Ukelele. Template icons are the new style of icons that switch color depending on the system theme.
+
+I tried simply setting a template icon from the GUI using the checkbox, but it never saved it correctly. I had to manually edit `*.bundle/Info.plist` file and set the flag.
 
 The structure of the Info.plist file is as follows:
 
@@ -64,32 +64,32 @@ The structure of the Info.plist file is as follows:
 
 ### v2.0 (WIP)
 
-| Key Combinations | Dead Key Symbol |
-| ---------------- | --------------- |
-| ⌥`               | `               |
-| ⌥⇧`             | ~               |
-| ⌥'               | ´               |
-| ⌥⇧'             | ¨               |
-| ⌥6               | ^               |
-| ⌥⇧6             | ˇ               |
-| ⌥7               | ˚               |
-| ⌥⇧7             | ¯               |
-| ⌥m               | Ω               |
-| ⌥⇧m             | √               |
-| ⌥\               | ¬               |
-
-### v1.5
-
-- Configures every key exactly as it is printed on the keyboard (English - International).
-- Fixes §-Key.
-- Fixes German ẞ-Character ("Großes scharfes S"). Now correctly available via ⌥⇧s.
+- Configures every key exactly as it is printed on the MacBook keyboard (ISO, English - International).
 - Removes distiction between left/right modifier keys.
 - Uses the `*.bundle` format to group the layout versions.
-- Adds new nicer flag icon from upstream.
+- Adds new monochrome macOS template icon that switches color with the system theme.
+- Renames all dead key states to their initializing key combination for easier identifcation. The following table shows the mappings:
+	| Key Combinations | Dead Key Symbol |
+	| ---------------- | --------------- |
+	| ⌥`|`               |
+	| ⌥⇧`             | ~               |
+	| ⌥'               | ´               |
+	| ⌥⇧'             | ¨               |
+	| ⌥6               | ^               |
+	| ⌥⇧6             | ˇ               |
+	| ⌥7               | ˚               |
+	| ⌥⇧7             | ¯               |
+	| ⌥m               | Ω               |
+	| ⌥⇧m             | √               |
+	| ⌥\               | ¬               |
 
 ### v1.4
 
 - Switches behaviour of superscript and subscript numbers: The subscript numbers are the default; the superscript numbers are available via `⌥⇧<number>`.
+
+### v1.3
+
+- Implements the layout according to [spec](https://eurkey.steffen.bruentjen.eu/changelog.html). The layout is based on [Leonardo Schenkel's version 1.2](https://github.com/lbschenkel/EurKEY-Mac).
 
 ## Attribution
 
