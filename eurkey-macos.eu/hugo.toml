@@ -1,0 +1,4 @@
+baseURL = 'https://eurkey-macos.eu'
+languageCode = 'en'
+title = 'EurKEY-macOS'
+theme = 'blank'

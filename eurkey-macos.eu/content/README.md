@@ -12,53 +12,10 @@ The keyboard layout should be compatible with the other ISO layouts typically av
 
 - Download the `EurKEY.bundle` file.
 - Copy the `EurKEY.bundle` file to `/Library/Keyboard Layouts/` (for global installation) or `~/Library/Keyboard Layouts/` (for user installation).
-- Open System Settings > Keyboard > Input Sources <br><img src="eurkey-macos.eu/static/img/1-input-sources.png" width="300" alt="A screenshot showing the system preferences and where to find the edit button for the input sources.">
-- Click the `+` button <br><img src="eurkey-macos.eu/static/img/2-add-layout.png" width="300" alt="A screenshot showing how to open the dialogue to add a new input source.">
-- Add `EurKEY` from the list of available input sources <br><img src="eurkey-macos.eu/static/img/3-select-eurkey.png" width="300" alt="A screenshot showing where EurKEY is located in the input sources list.">
-- Select `EurKEY` as the input method <br><img src="eurkey-macos.eu/static/img/4-select-input-method.png" width="300" alt="A screenshot showing the dropdown menu in the menu bar extra.">
-
-## Notes on Ukelele and template icons
-
-I have tried to configure a template icon for the bundle and stumbled onto behaviour that I consider a bug in Ukelele. I tried simply setting a template icon from the GUI using the checkbox, but it never saved it correctly. I had to manually edit `*.bundle/Info.plist` file and set the flag.
-
-The structure of the Info.plist file is as follows:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>CFBundleIdentifier</key>
-	<string>de.felixfoertsch.keyboardlayout.EurKEY-macOS</string>
-	→ Bundle Identifier
-
-	<key>CFBundleName</key>
-	<string>EurKEY-macOS</string>
-	→ Filename of the *.bundle file
-
-	<key>CFBundleVersion</key>
-	<string></string>
-	<key>KLInfo_EurKEY v2.0</key>
-	→ Name of the keyboard layout in the collection list
-
-	<dict>
-		<key>TICapsLockLanguageSwitchCapable</key>
-		<false/>
-		<key>TISIconIsTemplate</key>
-		<true/>
-		→ Set to true to use the icon as a template
-
-		<key>TISInputSourceID</key>
-		<string>de.felixfoertsch.keyboardlayout.EurKEY-macOS.eurkeyv2.0</string>
-		→ Identifier for the layout within the bundle, spaces are simply removed from the name.
-		→ The syntax is: reverse-prefix-notation.BundleIdentifier.LayoutName
-
-		<key>TISIntendedLanguage</key>
-		<string>en</string>
-	</dict>
-</dict>
-</plist>
-```
+- Open System Settings > Keyboard > Input Sources <br><img src="eurkey-macos.eu/static/img/1-input-sources.png" width="300">
+- Click the `+` button <br><img src="eurkey-macos.eu/static/img/2-add-layout.png" width="300">
+- Add `EurKEY` from the list of available input sources <br><img src="eurkey-macos.eu/static/img/3-select-eurkey.png" width="300">
+- Select `EurKEY` as the input method <br><img src="eurkey-macos.eu/static/img/4-select-input-method.png" width="300">
 
 ## Changelog
 
