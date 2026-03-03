@@ -1,8 +1,8 @@
-name: Validate Layouts
+name: Build
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'EurKey-macOS.bundle/**'
       - 'scripts/**'
@@ -14,7 +14,7 @@ on:
       - 'spec/**'
 
 jobs:
-  validate:
+  build:
     runs-on: macos-latest
     steps:
       - name: checkout
@@ -25,3 +25,12 @@ jobs:
 
       - name: build bundle
         run: bash scripts/build-bundle.sh
+
+      - name: create DMG
+        run: bash scripts/create-dmg.sh
+
+      - name: upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: EurKEY-macOS-DMG
+          path: build/*.dmg
