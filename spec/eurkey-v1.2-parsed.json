@@ -1,0 +1,2282 @@
+{
+	"name": "EurKEY v1.2",
+	"group": "126",
+	"id": "-26839",
+	"modifierMap": {
+		"f4": {
+			"defaultIndex": "7",
+			"selects": [
+				{
+					"mapIndex": "0",
+					"modifiers": [
+						"command?",
+						"anyShift? caps? command"
+					]
+				},
+				{
+					"mapIndex": "1",
+					"modifiers": [
+						"anyShift caps?"
+					]
+				},
+				{
+					"mapIndex": "2",
+					"modifiers": [
+						"caps"
+					]
+				},
+				{
+					"mapIndex": "3",
+					"modifiers": [
+						"anyOption"
+					]
+				},
+				{
+					"mapIndex": "4",
+					"modifiers": [
+						"anyShift caps? anyOption command?"
+					]
+				},
+				{
+					"mapIndex": "5",
+					"modifiers": [
+						"caps anyOption"
+					]
+				},
+				{
+					"mapIndex": "6",
+					"modifiers": [
+						"caps? anyOption command"
+					]
+				},
+				{
+					"mapIndex": "7",
+					"modifiers": [
+						"anyShift caps? option? command? control",
+						"shift? caps? anyOption command? control",
+						"caps? anyOption? command? control"
+					]
+				}
+			]
+		}
+	},
+	"actions": {
+		"!": {
+			"none": "!",
+			"dead: Ω": "₁",
+			"dead: √": "≠"
+		},
+		"\"": {
+			"none": "\"",
+			"dead: Ω": "₊",
+			"dead: √": "″"
+		},
+		"#": {
+			"none": "#",
+			"dead: ˇ": "Ǯ",
+			"dead: Ω": "₃"
+		},
+		"$": {
+			"none": "$",
+			"dead: Ω": "₄"
+		},
+		"%": {
+			"none": "%",
+			"dead: Ω": "₅",
+			"dead: √": "‰"
+		},
+		"&": {
+			"none": "&",
+			"dead: Ω": "₇",
+			"dead: √": "∧"
+		},
+		"'": {
+			"none": "'",
+			"dead: Ω": "₌",
+			"dead: √": "′"
+		},
+		"(": {
+			"none": "(",
+			"dead: Ω": "₉"
+		},
+		")": {
+			"none": ")",
+			"dead: Ω": "₀"
+		},
+		"*": {
+			"none": "*",
+			"dead: Ω": "₈",
+			"dead: √": "⊗"
+		},
+		"+": {
+			"none": "+",
+			"dead: ©": "⇔",
+			"dead: Ω": "⁺",
+			"dead: √": "⊕"
+		},
+		"-": {
+			"none": "-",
+			"dead: Ω": "⁻",
+			"dead: √": "±"
+		},
+		".": {
+			"none": ".",
+			"dead: √": "⋅"
+		},
+		"0": {
+			"none": "0",
+			"dead: Ω": "⁰"
+		},
+		"1": {
+			"none": "1",
+			"dead: ©": "¼",
+			"dead: ¯": "‐",
+			"dead: Ω": "¹"
+		},
+		"2": {
+			"none": "2",
+			"dead: ©": "½",
+			"dead: ¯": "–",
+			"dead: Ω": "²"
+		},
+		"3": {
+			"none": "3",
+			"dead: ©": "¾",
+			"dead: ¯": "—",
+			"dead: ˇ": "ǯ",
+			"dead: Ω": "³",
+			"dead: √": "∛"
+		},
+		"4": {
+			"none": "4",
+			"dead: ©": "⅓",
+			"dead: Ω": "⁴",
+			"dead: √": "∜"
+		},
+		"5": {
+			"none": "5",
+			"dead: ©": "⅔",
+			"dead: ¯": "¯",
+			"dead: ´": "´",
+			"dead: ˇ": "ˇ",
+			"dead: ˚": "˚",
+			"dead: Ω": "⁵"
+		},
+		"6": {
+			"none": "6",
+			"dead: Ω": "⁶"
+		},
+		"6 option": {
+			"next": "dead: ^"
+		},
+		"7": {
+			"none": "7",
+			"dead: Ω": "⁷",
+			"dead: √": "∡"
+		},
+		"8": {
+			"none": "8",
+			"dead: Ω": "⁸",
+			"dead: √": "∠"
+		},
+		"9": {
+			"none": "9",
+			"dead: Ω": "⁹",
+			"dead: √": "∟"
+		},
+		":": {
+			"none": ":",
+			"dead: √": "∴"
+		},
+		";": {
+			"none": ";",
+			"dead: Ω": "₋",
+			"dead: √": "∵"
+		},
+		"<": {
+			"none": "<",
+			"dead: √": "≤"
+		},
+		"=": {
+			"none": "=",
+			"dead: ©": "↔",
+			"dead: Ω": "⁼",
+			"dead: √": "≝"
+		},
+		">": {
+			"none": ">",
+			"dead: √": "≥"
+		},
+		"@": {
+			"none": "@",
+			"dead: Ω": "₂"
+		},
+		"A": {
+			"none": "A",
+			"dead: ^": "Â",
+			"dead: `": "À",
+			"dead: ~": "Ã",
+			"dead: ¨": "Ä",
+			"dead: ¯": "Ā",
+			"dead: ´": "Á",
+			"dead: ˇ": "Ǎ",
+			"dead: ˚": "Å",
+			"dead: Ω": "Α",
+			"dead: √": "∀"
+		},
+		"B": {
+			"none": "B",
+			"dead: ¯": "Ƀ",
+			"dead: ´": "Ɓ",
+			"dead: Ω": "Β",
+			"dead: √": "⊇"
+		},
+		"C": {
+			"none": "C",
+			"dead: ^": "Ĉ",
+			"dead: ©": "©",
+			"dead: ´": "Ć",
+			"dead: ˇ": "Č",
+			"dead: ˚": "Ċ",
+			"dead: Ω": "Χ",
+			"dead: √": "ℂ"
+		},
+		"D": {
+			"none": "D",
+			"dead: ¯": "Đ",
+			"dead: ˇ": "Ď",
+			"dead: Ω": "Δ",
+			"dead: √": "∇"
+		},
+		"E": {
+			"none": "E",
+			"dead: ^": "Ê",
+			"dead: `": "È",
+			"dead: ¨": "Ë",
+			"dead: ¯": "Ē",
+			"dead: ´": "É",
+			"dead: ˇ": "Ě",
+			"dead: ˚": "Ė",
+			"dead: Ω": "Ε",
+			"dead: √": "∃"
+		},
+		"F": {
+			"none": "F",
+			"dead: Ω": "Φ",
+			"dead: √": "∎"
+		},
+		"G": {
+			"none": "G",
+			"dead: ^": "Ĝ",
+			"dead: ¯": "Ḡ",
+			"dead: ´": "Ǵ",
+			"dead: ˇ": "Ǧ",
+			"dead: ˚": "Ġ",
+			"dead: Ω": "Γ",
+			"dead: √": "⊃"
+		},
+		"H": {
+			"none": "H",
+			"dead: ^": "Ĥ",
+			"dead: ¨": "Ḧ",
+			"dead: ©": "⇐",
+			"dead: ¯": "Ħ",
+			"dead: ˇ": "Ȟ",
+			"dead: Ω": "Θ",
+			"dead: √": "⊅"
+		},
+		"I": {
+			"none": "I",
+			"dead: ^": "Î",
+			"dead: `": "Ì",
+			"dead: ~": "Ĩ",
+			"dead: ¨": "Ï",
+			"dead: ©": "⇗",
+			"dead: ¯": "Ī",
+			"dead: ´": "Í",
+			"dead: ˇ": "Ǐ",
+			"dead: ˚": "İ",
+			"dead: Ω": "Η"
+		},
+		"J": {
+			"none": "J",
+			"dead: ^": "Ĵ",
+			"dead: ©": "⇓",
+			"dead: Ω": "Ι"
+		},
+		"K": {
+			"none": "K",
+			"dead: ©": "⇑",
+			"dead: ´": "Ḱ",
+			"dead: ˇ": "Ǩ",
+			"dead: Ω": "Κ",
+			"dead: √": "∌"
+		},
+		"L": {
+			"none": "L",
+			"dead: ©": "⇒",
+			"dead: ¯": "Ḻ",
+			"dead: ´": "Ł",
+			"dead: ˇ": "Ľ",
+			"dead: Ω": "Λ",
+			"dead: √": "∦"
+		},
+		"M": {
+			"none": "M",
+			"dead: ©": "⇘",
+			"dead: ´": "Ḿ",
+			"dead: Ω": "Μ",
+			"dead: √": "∉"
+		},
+		"N": {
+			"none": "N",
+			"dead: ~": "Ñ",
+			"dead: ©": "⇙",
+			"dead: ´": "Ń",
+			"dead: ˇ": "Ň",
+			"dead: Ω": "Ν",
+			"dead: √": "ℕ"
+		},
+		"O": {
+			"none": "O",
+			"dead: ^": "Ô",
+			"dead: `": "Ò",
+			"dead: ~": "Õ",
+			"dead: ¨": "Ö",
+			"dead: ¯": "Ō",
+			"dead: ´": "Ó",
+			"dead: ˇ": "Ǒ",
+			"dead: Ω": "Ο",
+			"dead: √": "∅"
+		},
+		"P": {
+			"none": "P",
+			"dead: ©": "℗",
+			"dead: ´": "Ṕ",
+			"dead: Ω": "Π",
+			"dead: √": "ℙ"
+		},
+		"Q": {
+			"none": "Q",
+			"dead: Ω": "Ω",
+			"dead: √": "ℚ"
+		},
+		"R": {
+			"none": "R",
+			"dead: ©": "®",
+			"dead: ´": "Ŕ",
+			"dead: ˇ": "Ř",
+			"dead: Ω": "Ρ",
+			"dead: √": "ℝ"
+		},
+		"S": {
+			"none": "S",
+			"dead: ^": "Ŝ",
+			"dead: ©": "℠",
+			"dead: ´": "Ś",
+			"dead: ˇ": "Š",
+			"dead: Ω": "Σ",
+			"dead: √": "∫"
+		},
+		"T": {
+			"none": "T",
+			"dead: ©": "™",
+			"dead: ¯": "Ŧ",
+			"dead: ˇ": "Ť",
+			"dead: Ω": "Τ"
+		},
+		"U": {
+			"none": "U",
+			"dead: ^": "Û",
+			"dead: `": "Ù",
+			"dead: ~": "Ũ",
+			"dead: ¨": "Ü",
+			"dead: ©": "⇖",
+			"dead: ¯": "Ū",
+			"dead: ´": "Ú",
+			"dead: ˇ": "Ǔ",
+			"dead: ˚": "Ů",
+			"dead: Ω": "Ω",
+			"dead: √": "∖"
+		},
+		"V": {
+			"none": "V",
+			"dead: Ω": "Β"
+		},
+		"W": {
+			"none": "W",
+			"dead: ^": "Ŵ",
+			"dead: ¨": "Ẅ",
+			"dead: ´": "Ẃ",
+			"dead: Ω": "Ψ"
+		},
+		"X": {
+			"none": "X",
+			"dead: ¨": "Ẍ",
+			"dead: Ω": "Ξ",
+			"dead: √": "∄"
+		},
+		"Y": {
+			"none": "Y",
+			"dead: ^": "Ŷ",
+			"dead: ~": "Ỹ",
+			"dead: ¨": "Ÿ",
+			"dead: ¯": "Ȳ",
+			"dead: ´": "Ý",
+			"dead: Ω": "Υ"
+		},
+		"Z": {
+			"none": "Z",
+			"dead: ´": "Ź",
+			"dead: ˇ": "Ž",
+			"dead: ˚": "Ż",
+			"dead: Ω": "Ζ",
+			"dead: √": "ℤ"
+		},
+		"[": {
+			"none": "[",
+			"dead: Ω": "⁽"
+		},
+		"]": {
+			"none": "]",
+			"dead: Ω": "⁾"
+		},
+		"^": {
+			"none": "^",
+			"dead: Ω": "₆",
+			"dead: √": "℘"
+		},
+		"_": {
+			"none": "_"
+		},
+		"`": {
+			"next": "dead: `"
+		},
+		"a": {
+			"none": "a",
+			"dead: ^": "â",
+			"dead: `": "à",
+			"dead: ~": "ã",
+			"dead: ¨": "ä",
+			"dead: ¯": "ā",
+			"dead: ´": "á",
+			"dead: ˇ": "ǎ",
+			"dead: ˚": "å",
+			"dead: Ω": "α"
+		},
+		"b": {
+			"none": "b",
+			"dead: ¯": "ƀ",
+			"dead: ´": "ɓ",
+			"dead: Ω": "β",
+			"dead: √": "⊆"
+		},
+		"c": {
+			"none": "c",
+			"dead: ^": "ĉ",
+			"dead: ©": "©",
+			"dead: ´": "ć",
+			"dead: ˇ": "č",
+			"dead: ˚": "ċ",
+			"dead: Ω": "χ",
+			"dead: √": "∝"
+		},
+		"d": {
+			"none": "d",
+			"dead: ¯": "đ",
+			"dead: ˇ": "ď",
+			"dead: Ω": "δ",
+			"dead: √": "Δ"
+		},
+		"e": {
+			"none": "e",
+			"dead: ^": "ê",
+			"dead: `": "è",
+			"dead: ¨": "ë",
+			"dead: ¯": "ē",
+			"dead: ´": "é",
+			"dead: ˇ": "ě",
+			"dead: ˚": "ė",
+			"dead: Ω": "ε"
+		},
+		"f": {
+			"none": "f",
+			"dead: Ω": "φ",
+			"dead: √": "ƒ"
+		},
+		"g": {
+			"none": "g",
+			"dead: ^": "ĝ",
+			"dead: ¯": "ḡ",
+			"dead: ´": "ǵ",
+			"dead: ˇ": "ǧ",
+			"dead: ˚": "ġ",
+			"dead: Ω": "γ",
+			"dead: √": "⊂"
+		},
+		"h": {
+			"none": "h",
+			"dead: ^": "ĥ",
+			"dead: ¨": "ḧ",
+			"dead: ©": "←",
+			"dead: ¯": "ħ",
+			"dead: ˇ": "ȟ",
+			"dead: Ω": "θ",
+			"dead: √": "⊄"
+		},
+		"i": {
+			"none": "i",
+			"dead: ^": "î",
+			"dead: `": "ì",
+			"dead: ~": "ĩ",
+			"dead: ¨": "ï",
+			"dead: ©": "↗",
+			"dead: ¯": "ī",
+			"dead: ´": "í",
+			"dead: ˇ": "ǐ",
+			"dead: Ω": "η",
+			"dead: √": "∞"
+		},
+		"j": {
+			"none": "j",
+			"dead: ^": "ĵ",
+			"dead: ©": "↓",
+			"dead: ˇ": "ǰ",
+			"dead: Ω": "ι"
+		},
+		"k": {
+			"none": "k",
+			"dead: ©": "↑",
+			"dead: ´": "ḱ",
+			"dead: ˇ": "ǩ",
+			"dead: Ω": "κ",
+			"dead: √": "∋"
+		},
+		"l": {
+			"none": "l",
+			"dead: ©": "→",
+			"dead: ¯": "ḻ",
+			"dead: ´": "ł",
+			"dead: ˇ": "ľ",
+			"dead: Ω": "λ",
+			"dead: √": "∥"
+		},
+		"m": {
+			"none": "m",
+			"dead: ©": "↘",
+			"dead: ´": "ḿ",
+			"dead: Ω": "μ",
+			"dead: √": "∈"
+		},
+		"n": {
+			"none": "n",
+			"dead: ~": "ñ",
+			"dead: ©": "↙",
+			"dead: ´": "ń",
+			"dead: ˇ": "ň",
+			"dead: Ω": "ν",
+			"dead: √": "ⁿ"
+		},
+		"o": {
+			"none": "o",
+			"dead: ^": "ô",
+			"dead: `": "ò",
+			"dead: ~": "õ",
+			"dead: ¨": "ö",
+			"dead: ¯": "ō",
+			"dead: ´": "ó",
+			"dead: ˇ": "ǒ",
+			"dead: Ω": "ο",
+			"dead: √": "∘"
+		},
+		"p": {
+			"none": "p",
+			"dead: ©": "℗",
+			"dead: ´": "ṕ",
+			"dead: Ω": "π",
+			"dead: √": "∂"
+		},
+		"q": {
+			"none": "q",
+			"dead: Ω": "ω"
+		},
+		"r": {
+			"none": "r",
+			"dead: ©": "®",
+			"dead: ´": "ŕ",
+			"dead: ˇ": "ř",
+			"dead: Ω": "ρ",
+			"dead: √": "√"
+		},
+		"s": {
+			"none": "s",
+			"dead: ^": "ŝ",
+			"dead: ©": "℠",
+			"dead: ´": "ś",
+			"dead: ˇ": "š",
+			"dead: Ω": "σ",
+			"dead: √": "∩"
+		},
+		"space": {
+			"none": " ",
+			"dead: ^": "^",
+			"dead: `": "`",
+			"dead: ~": "~",
+			"dead: ¨": "¨",
+			"dead: ©": "©",
+			"dead: ¯": "¯",
+			"dead: ´": "´",
+			"dead: ˇ": "ˇ",
+			"dead: ˚": "˚",
+			"dead: √": "√"
+		},
+		"t": {
+			"none": "t",
+			"dead: ¨": "ẗ",
+			"dead: ©": "™",
+			"dead: ¯": "ŧ",
+			"dead: ˇ": "ť",
+			"dead: Ω": "τ"
+		},
+		"u": {
+			"none": "u",
+			"dead: ^": "û",
+			"dead: `": "ù",
+			"dead: ~": "ũ",
+			"dead: ¨": "ü",
+			"dead: ©": "↖",
+			"dead: ¯": "ū",
+			"dead: ´": "ú",
+			"dead: ˇ": "ǔ",
+			"dead: ˚": "ů",
+			"dead: Ω": "ω",
+			"dead: √": "∪"
+		},
+		"v": {
+			"none": "v",
+			"dead: Ω": "β"
+		},
+		"w": {
+			"none": "w",
+			"dead: ^": "ŵ",
+			"dead: ¨": "ẅ",
+			"dead: ´": "ẃ",
+			"dead: ˚": "ẘ",
+			"dead: Ω": "ψ"
+		},
+		"x": {
+			"none": "x",
+			"dead: ¨": "ẍ",
+			"dead: Ω": "ξ"
+		},
+		"y": {
+			"none": "y",
+			"dead: ^": "ŷ",
+			"dead: ~": "ỹ",
+			"dead: ¨": "ÿ",
+			"dead: ¯": "ȳ",
+			"dead: ´": "ý",
+			"dead: ˚": "ẙ",
+			"dead: Ω": "υ"
+		},
+		"z": {
+			"none": "z",
+			"dead: ´": "ź",
+			"dead: ˇ": "ž",
+			"dead: ˚": "ż",
+			"dead: Ω": "ζ",
+			"dead: √": "↯"
+		},
+		"{": {
+			"none": "{",
+			"dead: Ω": "₍"
+		},
+		"|": {
+			"none": "|",
+			"dead: √": "∨"
+		},
+		"}": {
+			"none": "}",
+			"dead: Ω": "₎"
+		},
+		"~": {
+			"none": "~",
+			"dead: √": "≈"
+		},
+		"~ option": {
+			"next": "dead: ~"
+		},
+		"¨": {
+			"next": "dead: ¨"
+		},
+		"©": {
+			"next": "dead: ©"
+		},
+		"¯": {
+			"next": "dead: ¯"
+		},
+		"´": {
+			"next": "dead: ´"
+		},
+		"Ä": {
+			"none": "Ä",
+			"dead: `": "Ą"
+		},
+		"Æ": {
+			"none": "Æ",
+			"dead: ¯": "Ǣ",
+			"dead: ´": "Ǽ"
+		},
+		"Ë": {
+			"none": "Ë",
+			"dead: `": "Ę"
+		},
+		"Ï": {
+			"none": "Ï",
+			"dead: `": "Į"
+		},
+		"Ö": {
+			"none": "Ö",
+			"dead: `": "Ǫ"
+		},
+		"Ø": {
+			"none": "Ø",
+			"dead: ´": "Ǿ"
+		},
+		"Ü": {
+			"none": "Ü",
+			"dead: `": "Ų",
+			"dead: ˇ": "Ǚ"
+		},
+		"ä": {
+			"none": "ä",
+			"dead: `": "ą"
+		},
+		"æ": {
+			"none": "æ",
+			"dead: ¯": "ǣ",
+			"dead: ´": "ǽ"
+		},
+		"ë": {
+			"none": "ë",
+			"dead: `": "ę"
+		},
+		"ï": {
+			"none": "ï",
+			"dead: `": "į"
+		},
+		"ö": {
+			"none": "ö",
+			"dead: `": "ǫ"
+		},
+		"ø": {
+			"none": "ø",
+			"dead: ´": "ǿ"
+		},
+		"ü": {
+			"none": "ü",
+			"dead: `": "ų",
+			"dead: ˇ": "ǚ"
+		},
+		"ˇ": {
+			"next": "dead: ˇ"
+		},
+		"˚": {
+			"next": "dead: ˚"
+		},
+		"Ω": {
+			"next": "dead: Ω"
+		},
+		"√": {
+			"next": "dead: √"
+		}
+	},
+	"terminators": {
+		"dead: ^": "^",
+		"dead: `": "`",
+		"dead: ~": "~",
+		"dead: ¨": "¨",
+		"dead: ©": "©",
+		"dead: ¯": "¯",
+		"dead: ´": "´",
+		"dead: ˇ": "ˇ",
+		"dead: ˚": "˚",
+		"dead: Ω": "Ω",
+		"dead: √": " "
+	},
+	"keyMaps": {
+		"0": {
+			"label": "Base",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"action": "a",
+					"output": "a"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"action": "s",
+					"output": "s"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"action": "d",
+					"output": "d"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"action": "f",
+					"output": "f"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"action": "h",
+					"output": "h"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"action": "g",
+					"output": "g"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"action": "z",
+					"output": "z"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"action": "x",
+					"output": "x"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"action": "c",
+					"output": "c"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"action": "v",
+					"output": "v"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "§"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"action": "b",
+					"output": "b"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"action": "q",
+					"output": "q"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"action": "w",
+					"output": "w"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"action": "e",
+					"output": "e"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"action": "r",
+					"output": "r"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"action": "y",
+					"output": "y"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"action": "t",
+					"output": "t"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"action": "1",
+					"output": "1"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"action": "4",
+					"output": "4"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"action": "6",
+					"output": "6"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"action": "5",
+					"output": "5"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "["
+				}
+			}
+		},
+		"1": {
+			"label": "Shift",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"action": "A",
+					"output": "A"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"action": "S",
+					"output": "S"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"action": "D",
+					"output": "D"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"action": "F",
+					"output": "F"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"action": "H",
+					"output": "H"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"action": "G",
+					"output": "G"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"action": "Z",
+					"output": "Z"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"action": "X",
+					"output": "X"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"action": "C",
+					"output": "C"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"action": "V",
+					"output": "V"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "±"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"action": "B",
+					"output": "B"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"action": "Q",
+					"output": "Q"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"action": "W",
+					"output": "W"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"action": "E",
+					"output": "E"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"action": "R",
+					"output": "R"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"action": "Y",
+					"output": "Y"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"action": "T",
+					"output": "T"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"action": "!",
+					"output": "!"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"action": "$",
+					"output": "$"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"output": "&"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"action": "%",
+					"output": "%"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "{"
+				}
+			}
+		},
+		"2": {
+			"label": "Caps",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"action": "A",
+					"output": "A"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"action": "S",
+					"output": "S"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"action": "D",
+					"output": "D"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"action": "F",
+					"output": "F"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"action": "H",
+					"output": "H"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"action": "G",
+					"output": "G"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"action": "Z",
+					"output": "Z"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"action": "X",
+					"output": "X"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"action": "C",
+					"output": "C"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"action": "V",
+					"output": "V"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "§"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"action": "B",
+					"output": "B"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"action": "Q",
+					"output": "Q"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"action": "W",
+					"output": "W"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"action": "E",
+					"output": "E"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"action": "R",
+					"output": "R"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"action": "Y",
+					"output": "Y"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"action": "T",
+					"output": "T"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"action": "1",
+					"output": "1"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"action": "4",
+					"output": "4"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"action": "6",
+					"output": "6"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"action": "5",
+					"output": "5"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "["
+				}
+			}
+		},
+		"3": {
+			"label": "Option",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"action": "ä",
+					"output": "ä"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"output": "ß"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"output": "đ"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"output": "è"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"output": "ù"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"output": "é"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"output": "à"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"output": "á"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"output": "ç"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"output": "ì"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "§"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"output": "í"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"action": "æ",
+					"output": "æ"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"output": "å"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"action": "ë",
+					"output": "ë"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"output": "ý"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"output": "ÿ"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"output": "þ"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"output": "¡"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"output": "£"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"action": "6 option",
+					"deadKey": "dead: ^"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"output": "€"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "»"
+				}
+			}
+		},
+		"4": {
+			"label": "Shift+Option",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"action": "Ä",
+					"output": "Ä"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"output": "§"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"output": "Đ"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"output": "È"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"output": "Ù"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"output": "É"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"output": "À"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"output": "Á"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"output": "Ç"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"output": "Ì"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "±"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"output": "Í"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"action": "Æ",
+					"output": "Æ"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"output": "Å"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"action": "Ë",
+					"output": "Ë"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"output": "Ý"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"output": "Ÿ"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"output": "Þ"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"output": "¹"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"output": "¥"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"action": "ˇ",
+					"deadKey": "dead: ˇ"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"output": "¢"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "›"
+				}
+			}
+		},
+		"5": {
+			"label": "Caps+Option",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"output": "Ä"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"output": "ß"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"output": "Ð"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"output": "È"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"output": "Ù"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"output": "É"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"output": "À"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"output": "Á"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"output": "Ç"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"output": "Ì"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "§"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"output": "Í"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"action": "Æ",
+					"output": "Æ"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"output": "Å"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"output": "Ë"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"output": "Ý"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"output": "Ÿ"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"output": "Þ"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"output": "¡"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"output": "£"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"action": "^",
+					"output": "^"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"output": "€"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "»"
+				}
+			}
+		},
+		"6": {
+			"label": "Command+Option",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"output": "å"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"output": "ß"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"output": "∂"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"output": "ƒ"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"output": "˙"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"output": "©"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"output": "Ω"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"output": "≈"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"output": "ç"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"output": "√"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "§"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"output": "∫"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"output": "œ"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"output": "∑"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"output": "´"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"output": "®"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"output": "¥"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"output": "†"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"output": "¡"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"output": "¢"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"output": "§"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"output": "∞"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "‘"
+				}
+			}
+		},
+		"7": {
+			"label": "Control",
+			"keys": {
+				"0": {
+					"code": 0,
+					"keyName": "A",
+					"output": "\u0001"
+				},
+				"1": {
+					"code": 1,
+					"keyName": "S",
+					"output": "\u0013"
+				},
+				"2": {
+					"code": 2,
+					"keyName": "D",
+					"output": "\u0004"
+				},
+				"3": {
+					"code": 3,
+					"keyName": "F",
+					"output": "\u0006"
+				},
+				"4": {
+					"code": 4,
+					"keyName": "H",
+					"output": "\b"
+				},
+				"5": {
+					"code": 5,
+					"keyName": "G",
+					"output": "\u0007"
+				},
+				"6": {
+					"code": 6,
+					"keyName": "Z",
+					"output": "\u001a"
+				},
+				"7": {
+					"code": 7,
+					"keyName": "X",
+					"output": "\u0018"
+				},
+				"8": {
+					"code": 8,
+					"keyName": "C",
+					"output": "\u0003"
+				},
+				"9": {
+					"code": 9,
+					"keyName": "V",
+					"output": "\u0016"
+				},
+				"10": {
+					"code": 10,
+					"keyName": "§/`",
+					"output": "0"
+				},
+				"11": {
+					"code": 11,
+					"keyName": "B",
+					"output": "\u0002"
+				},
+				"12": {
+					"code": 12,
+					"keyName": "Q",
+					"output": "\u0011"
+				},
+				"13": {
+					"code": 13,
+					"keyName": "W",
+					"output": "\u0017"
+				},
+				"14": {
+					"code": 14,
+					"keyName": "E",
+					"output": "\u0005"
+				},
+				"15": {
+					"code": 15,
+					"keyName": "R",
+					"output": "\u0012"
+				},
+				"16": {
+					"code": 16,
+					"keyName": "Y",
+					"output": "\u0019"
+				},
+				"17": {
+					"code": 17,
+					"keyName": "T",
+					"output": "\u0014"
+				},
+				"18": {
+					"code": 18,
+					"keyName": "1",
+					"output": "1"
+				},
+				"21": {
+					"code": 21,
+					"keyName": "4",
+					"output": "4"
+				},
+				"22": {
+					"code": 22,
+					"keyName": "6",
+					"output": "6"
+				},
+				"23": {
+					"code": 23,
+					"keyName": "5",
+					"output": "5"
+				},
+				"30": {
+					"code": 30,
+					"keyName": "]",
+					"output": "\u001d"
+				}
+			}
+		}
+	},
+	"deadKeys": {
+		"dead: ^": {
+			"terminator": "^",
+			"compositions": {
+				"A": "Â",
+				"C": "Ĉ",
+				"E": "Ê",
+				"G": "Ĝ",
+				"H": "Ĥ",
+				"I": "Î",
+				"J": "Ĵ",
+				"O": "Ô",
+				"S": "Ŝ",
+				"U": "Û",
+				"W": "Ŵ",
+				"Y": "Ŷ",
+				"a": "â",
+				"c": "ĉ",
+				"e": "ê",
+				"g": "ĝ",
+				"h": "ĥ",
+				"i": "î",
+				"j": "ĵ",
+				"o": "ô",
+				"s": "ŝ",
+				"space": "^",
+				"u": "û",
+				"w": "ŵ",
+				"y": "ŷ"
+			}
+		},
+		"dead: `": {
+			"terminator": "`",
+			"compositions": {
+				"A": "À",
+				"E": "È",
+				"I": "Ì",
+				"O": "Ò",
+				"U": "Ù",
+				"a": "à",
+				"e": "è",
+				"i": "ì",
+				"o": "ò",
+				"space": "`",
+				"u": "ù",
+				"Ä": "Ą",
+				"Ë": "Ę",
+				"Ï": "Į",
+				"Ö": "Ǫ",
+				"Ü": "Ų",
+				"ä": "ą",
+				"ë": "ę",
+				"ï": "į",
+				"ö": "ǫ",
+				"ü": "ų"
+			}
+		},
+		"dead: ~": {
+			"terminator": "~",
+			"compositions": {
+				"A": "Ã",
+				"I": "Ĩ",
+				"N": "Ñ",
+				"O": "Õ",
+				"U": "Ũ",
+				"Y": "Ỹ",
+				"a": "ã",
+				"i": "ĩ",
+				"n": "ñ",
+				"o": "õ",
+				"space": "~",
+				"u": "ũ",
+				"y": "ỹ"
+			}
+		},
+		"dead: ¨": {
+			"terminator": "¨",
+			"compositions": {
+				"A": "Ä",
+				"E": "Ë",
+				"H": "Ḧ",
+				"I": "Ï",
+				"O": "Ö",
+				"U": "Ü",
+				"W": "Ẅ",
+				"X": "Ẍ",
+				"Y": "Ÿ",
+				"a": "ä",
+				"e": "ë",
+				"h": "ḧ",
+				"i": "ï",
+				"o": "ö",
+				"space": "¨",
+				"t": "ẗ",
+				"u": "ü",
+				"w": "ẅ",
+				"x": "ẍ",
+				"y": "ÿ"
+			}
+		},
+		"dead: ©": {
+			"terminator": "©",
+			"compositions": {
+				"+": "⇔",
+				"1": "¼",
+				"2": "½",
+				"3": "¾",
+				"4": "⅓",
+				"5": "⅔",
+				"=": "↔",
+				"C": "©",
+				"H": "⇐",
+				"I": "⇗",
+				"J": "⇓",
+				"K": "⇑",
+				"L": "⇒",
+				"M": "⇘",
+				"N": "⇙",
+				"P": "℗",
+				"R": "®",
+				"S": "℠",
+				"T": "™",
+				"U": "⇖",
+				"c": "©",
+				"h": "←",
+				"i": "↗",
+				"j": "↓",
+				"k": "↑",
+				"l": "→",
+				"m": "↘",
+				"n": "↙",
+				"p": "℗",
+				"r": "®",
+				"s": "℠",
+				"space": "©",
+				"t": "™",
+				"u": "↖"
+			}
+		},
+		"dead: ¯": {
+			"terminator": "¯",
+			"compositions": {
+				"1": "‐",
+				"2": "–",
+				"3": "—",
+				"5": "¯",
+				"A": "Ā",
+				"B": "Ƀ",
+				"D": "Đ",
+				"E": "Ē",
+				"G": "Ḡ",
+				"H": "Ħ",
+				"I": "Ī",
+				"L": "Ḻ",
+				"O": "Ō",
+				"T": "Ŧ",
+				"U": "Ū",
+				"Y": "Ȳ",
+				"a": "ā",
+				"b": "ƀ",
+				"d": "đ",
+				"e": "ē",
+				"g": "ḡ",
+				"h": "ħ",
+				"i": "ī",
+				"l": "ḻ",
+				"o": "ō",
+				"space": "¯",
+				"t": "ŧ",
+				"u": "ū",
+				"y": "ȳ",
+				"Æ": "Ǣ",
+				"æ": "ǣ"
+			}
+		},
+		"dead: ´": {
+			"terminator": "´",
+			"compositions": {
+				"5": "´",
+				"A": "Á",
+				"B": "Ɓ",
+				"C": "Ć",
+				"E": "É",
+				"G": "Ǵ",
+				"I": "Í",
+				"K": "Ḱ",
+				"L": "Ł",
+				"M": "Ḿ",
+				"N": "Ń",
+				"O": "Ó",
+				"P": "Ṕ",
+				"R": "Ŕ",
+				"S": "Ś",
+				"U": "Ú",
+				"W": "Ẃ",
+				"Y": "Ý",
+				"Z": "Ź",
+				"a": "á",
+				"b": "ɓ",
+				"c": "ć",
+				"e": "é",
+				"g": "ǵ",
+				"i": "í",
+				"k": "ḱ",
+				"l": "ł",
+				"m": "ḿ",
+				"n": "ń",
+				"o": "ó",
+				"p": "ṕ",
+				"r": "ŕ",
+				"s": "ś",
+				"space": "´",
+				"u": "ú",
+				"w": "ẃ",
+				"y": "ý",
+				"z": "ź",
+				"Æ": "Ǽ",
+				"Ø": "Ǿ",
+				"æ": "ǽ",
+				"ø": "ǿ"
+			}
+		},
+		"dead: ˇ": {
+			"terminator": "ˇ",
+			"compositions": {
+				"#": "Ǯ",
+				"3": "ǯ",
+				"5": "ˇ",
+				"A": "Ǎ",
+				"C": "Č",
+				"D": "Ď",
+				"E": "Ě",
+				"G": "Ǧ",
+				"H": "Ȟ",
+				"I": "Ǐ",
+				"K": "Ǩ",
+				"L": "Ľ",
+				"N": "Ň",
+				"O": "Ǒ",
+				"R": "Ř",
+				"S": "Š",
+				"T": "Ť",
+				"U": "Ǔ",
+				"Z": "Ž",
+				"a": "ǎ",
+				"c": "č",
+				"d": "ď",
+				"e": "ě",
+				"g": "ǧ",
+				"h": "ȟ",
+				"i": "ǐ",
+				"j": "ǰ",
+				"k": "ǩ",
+				"l": "ľ",
+				"n": "ň",
+				"o": "ǒ",
+				"r": "ř",
+				"s": "š",
+				"space": "ˇ",
+				"t": "ť",
+				"u": "ǔ",
+				"z": "ž",
+				"Ü": "Ǚ",
+				"ü": "ǚ"
+			}
+		},
+		"dead: ˚": {
+			"terminator": "˚",
+			"compositions": {
+				"5": "˚",
+				"A": "Å",
+				"C": "Ċ",
+				"E": "Ė",
+				"G": "Ġ",
+				"I": "İ",
+				"U": "Ů",
+				"Z": "Ż",
+				"a": "å",
+				"c": "ċ",
+				"e": "ė",
+				"g": "ġ",
+				"space": "˚",
+				"u": "ů",
+				"w": "ẘ",
+				"y": "ẙ",
+				"z": "ż"
+			}
+		},
+		"dead: Ω": {
+			"terminator": "Ω",
+			"compositions": {
+				"!": "₁",
+				"\"": "₊",
+				"#": "₃",
+				"$": "₄",
+				"%": "₅",
+				"&": "₇",
+				"'": "₌",
+				"(": "₉",
+				")": "₀",
+				"*": "₈",
+				"+": "⁺",
+				"-": "⁻",
+				"0": "⁰",
+				"1": "¹",
+				"2": "²",
+				"3": "³",
+				"4": "⁴",
+				"5": "⁵",
+				"6": "⁶",
+				"7": "⁷",
+				"8": "⁸",
+				"9": "⁹",
+				";": "₋",
+				"=": "⁼",
+				"@": "₂",
+				"A": "Α",
+				"B": "Β",
+				"C": "Χ",
+				"D": "Δ",
+				"E": "Ε",
+				"F": "Φ",
+				"G": "Γ",
+				"H": "Θ",
+				"I": "Η",
+				"J": "Ι",
+				"K": "Κ",
+				"L": "Λ",
+				"M": "Μ",
+				"N": "Ν",
+				"O": "Ο",
+				"P": "Π",
+				"Q": "Ω",
+				"R": "Ρ",
+				"S": "Σ",
+				"T": "Τ",
+				"U": "Ω",
+				"V": "Β",
+				"W": "Ψ",
+				"X": "Ξ",
+				"Y": "Υ",
+				"Z": "Ζ",
+				"[": "⁽",
+				"]": "⁾",
+				"^": "₆",
+				"a": "α",
+				"b": "β",
+				"c": "χ",
+				"d": "δ",
+				"e": "ε",
+				"f": "φ",
+				"g": "γ",
+				"h": "θ",
+				"i": "η",
+				"j": "ι",
+				"k": "κ",
+				"l": "λ",
+				"m": "μ",
+				"n": "ν",
+				"o": "ο",
+				"p": "π",
+				"q": "ω",
+				"r": "ρ",
+				"s": "σ",
+				"t": "τ",
+				"u": "ω",
+				"v": "β",
+				"w": "ψ",
+				"x": "ξ",
+				"y": "υ",
+				"z": "ζ",
+				"{": "₍",
+				"}": "₎"
+			}
+		},
+		"dead: √": {
+			"terminator": " ",
+			"compositions": {
+				"!": "≠",
+				"\"": "″",
+				"%": "‰",
+				"&": "∧",
+				"'": "′",
+				"*": "⊗",
+				"+": "⊕",
+				"-": "±",
+				".": "⋅",
+				"3": "∛",
+				"4": "∜",
+				"7": "∡",
+				"8": "∠",
+				"9": "∟",
+				":": "∴",
+				";": "∵",
+				"<": "≤",
+				"=": "≝",
+				">": "≥",
+				"A": "∀",
+				"B": "⊇",
+				"C": "ℂ",
+				"D": "∇",
+				"E": "∃",
+				"F": "∎",
+				"G": "⊃",
+				"H": "⊅",
+				"K": "∌",
+				"L": "∦",
+				"M": "∉",
+				"N": "ℕ",
+				"O": "∅",
+				"P": "ℙ",
+				"Q": "ℚ",
+				"R": "ℝ",
+				"S": "∫",
+				"U": "∖",
+				"X": "∄",
+				"Z": "ℤ",
+				"^": "℘",
+				"b": "⊆",
+				"c": "∝",
+				"d": "Δ",
+				"f": "ƒ",
+				"g": "⊂",
+				"h": "⊄",
+				"i": "∞",
+				"k": "∋",
+				"l": "∥",
+				"m": "∈",
+				"n": "ⁿ",
+				"o": "∘",
+				"p": "∂",
+				"r": "√",
+				"s": "∩",
+				"space": "√",
+				"u": "∪",
+				"z": "↯",
+				"|": "∨",
+				"~": "≈"
+			}
+		}
+	}
+}

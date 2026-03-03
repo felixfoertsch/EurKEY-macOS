@@ -1123,7 +1123,7 @@
             <when state="dead: Ω" output="⁵"/>
         </action>
         <action id="6">
-            <when state="none" output="p"/>
+            <when state="none" output="6"/>
             <when state="dead: ¬" output="¾"/>
             <when state="dead: Ω" output="⁶"/>
         </action>
