@@ -1774,7 +1774,7 @@
         <when state="⌥'" output="´"/>
         <when state="⌥⇧6" output="ˇ"/>
         <when state="⌥7" output="˚"/>
-        <when state="⌥m" output="Ω"/>
+        <when state="⌥m" output="α"/>
         <when state="⌥⇧m" output=" "/>
     </terminators>
 </keyboard>

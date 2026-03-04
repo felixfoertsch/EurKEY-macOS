@@ -1762,7 +1762,7 @@
         <when state="3" output="`"/>
         <when state="4" output="¬"/>
         <when state="5" output="˚"/>
-        <when state="6" output="Ω"/>
+        <when state="6" output="α"/>
         <when state="7" output="^"/>
         <when state="8" output="¨"/>
         <when state="9" output="´"/>

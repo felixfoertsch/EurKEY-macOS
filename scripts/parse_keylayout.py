@@ -163,8 +163,11 @@ def parse_keylayout(filepath):
 	# resolve layouts
 	layouts = root.findall(".//layout")
 
-	# build resolved key maps with all key codes from all layout entries
+	# build resolved key maps from all layout entries
+	# first pass: load ALL keys from each keyMapSet (base definitions)
+	# second pass: override with keys from layout entries that specify ranges
 	resolved = {}
+	seen_map_sets = set()
 	for layout in layouts:
 		map_set_id = layout.get("mapSet")
 		first_code = int(layout.get("first", "0"))
@@ -176,8 +179,13 @@ def parse_keylayout(filepath):
 				resolved[idx_str] = {}
 			for code_str, entry in keys.items():
 				code = int(code_str)
-				if first_code <= code <= last_code:
+				if map_set_id not in seen_map_sets:
+					# first time seeing this mapSet: include all keys
 					resolved[idx_str][code_str] = entry
+				elif first_code <= code <= last_code:
+					# subsequent layout with same mapSet: only override in range
+					resolved[idx_str][code_str] = entry
+		seen_map_sets.add(map_set_id)
 
 	# build the final keyMaps output
 	key_maps = {}

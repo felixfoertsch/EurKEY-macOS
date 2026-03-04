@@ -796,7 +796,7 @@
 		"3": "`",
 		"4": "¬",
 		"5": "˚",
-		"6": "Ω",
+		"6": "α",
 		"7": "^",
 		"8": "¨",
 		"9": "´"
@@ -918,6 +918,18 @@
 					"action": "a14",
 					"output": "1"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"action": "a15",
+					"output": "2"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"action": "a16",
+					"output": "3"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -936,10 +948,469 @@
 					"action": "a18",
 					"output": "5"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "^"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"action": "a23",
+					"output": "9"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"action": "a21",
+					"output": "7"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"action": "a11",
+					"output": "-"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"action": "a22",
+					"output": "8"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"action": "a13",
+					"output": "0"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "["
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"action": "a75",
+					"output": "o"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"action": "a82",
+					"output": "u"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "@"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"action": "a69",
+					"output": "i"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"action": "a76",
+					"output": "p"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"action": "a72",
+					"output": "l"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"action": "a70",
+					"output": "j"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"output": ":"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"action": "a71",
+					"output": "k"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"action": "a25",
+					"output": ";"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "]"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": ","
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "/"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"action": "a74",
+					"output": "n"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"action": "a73",
+					"output": "m"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"action": "a12",
+					"output": "."
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"action": "a80",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"output": "`"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": "."
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "\u001d"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "\u001c"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "\u001f"
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "\u001e"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "¥"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "_"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1059,6 +1530,17 @@
 					"action": "a0",
 					"output": "!"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"output": "\""
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"action": "a2",
+					"output": "#"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1076,10 +1558,465 @@
 					"action": "a4",
 					"output": "%"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "~"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"output": ")"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"output": "'"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"output": "="
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"output": "("
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"output": "0"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "{"
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"action": "a44",
+					"output": "O"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"action": "a50",
+					"output": "U"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "`"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"action": "a38",
+					"output": "I"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"action": "a45",
+					"output": "P"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"action": "a41",
+					"output": "L"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"action": "a39",
+					"output": "J"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"output": "*"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"action": "a40",
+					"output": "K"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"output": "+"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "}"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"action": "a26",
+					"output": "<"
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "?"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"action": "a43",
+					"output": "N"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"action": "a42",
+					"output": "M"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"action": "a28",
+					"output": ">"
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"action": "a80",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"action": "a91",
+					"output": "~"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": "."
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "*"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "+"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "="
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "/"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "|"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "_"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1199,6 +2136,18 @@
 					"action": "a14",
 					"output": "1"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"action": "a15",
+					"output": "2"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"action": "a16",
+					"output": "3"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1217,10 +2166,467 @@
 					"action": "a18",
 					"output": "5"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "^"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"action": "a23",
+					"output": "9"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"action": "a21",
+					"output": "7"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"action": "a11",
+					"output": "-"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"action": "a22",
+					"output": "8"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"action": "a13",
+					"output": "0"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "["
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"action": "a44",
+					"output": "O"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"action": "a50",
+					"output": "U"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "@"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"action": "a38",
+					"output": "I"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"action": "a45",
+					"output": "P"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"action": "a41",
+					"output": "L"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"action": "a39",
+					"output": "J"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"output": ":"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"action": "a40",
+					"output": "K"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"output": ";"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "]"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": ","
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "/"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"action": "a43",
+					"output": "N"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"action": "a42",
+					"output": "M"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"output": "."
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"action": "a80",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"output": "`"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": "."
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "\u001d"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "\u001c"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "\u001f"
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "\u001e"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "¥"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "_"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1325,6 +2731,16 @@
 					"keyName": "1",
 					"output": "¡"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"output": "ª"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"output": "º"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1341,10 +2757,462 @@
 					"keyName": "5",
 					"output": "€"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "×"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"output": "“"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"action": "a112",
+					"deadKey": "5"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"output": "✓"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"output": "„"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"output": "”"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "»"
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"action": "a108",
+					"output": "ö"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"action": "a110",
+					"output": "ü"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "«"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"action": "a107",
+					"output": "ï"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"output": "œ"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"action": "a109",
+					"output": "ø"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"output": "ú"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"action": "a96",
+					"deadKey": "9"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"output": "ĳ"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"output": "°"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"action": "a94",
+					"deadKey": "4"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": "ò"
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "¿"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"output": "ñ"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"action": "a113",
+					"deadKey": "6"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"output": "ó"
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"action": "a60",
+					"deadKey": "3"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": ","
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "\u001d"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "\u001c"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "\u001f"
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "\u001e"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "\\"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"action": "a60",
+					"deadKey": "3"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1449,6 +3317,16 @@
 					"keyName": "1",
 					"output": "¹"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"output": "²"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"output": "³"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1465,10 +3343,460 @@
 					"keyName": "5",
 					"output": "¢"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "÷"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"output": "‘"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"action": "a95",
+					"deadKey": "2"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"output": "✗"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"output": "‚"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"output": "’"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "›"
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"action": "a101",
+					"output": "Ö"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"action": "a103",
+					"output": "Ü"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "‹"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"action": "a100",
+					"output": "Ï"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"output": "Œ"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"action": "a102",
+					"output": "Ø"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"output": "Ú"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"action": "a93",
+					"deadKey": "8"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"output": "Ĳ"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"output": "·"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "¦"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": "Ò"
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "…"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"output": "Ñ"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"action": "a114",
+					"deadKey": "1"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"output": "Ó"
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"action": "a92",
+					"deadKey": "11"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": "."
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "*"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "+"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "="
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "/"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "|"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "`"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1571,6 +3899,16 @@
 					"keyName": "1",
 					"output": "¡"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"output": "ª"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"output": "º"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1587,10 +3925,453 @@
 					"keyName": "5",
 					"output": "€"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "×"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"output": "“"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"action": "a112",
+					"deadKey": "5"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"output": "„"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"output": "”"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "»"
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"output": "Ö"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"output": "Ü"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "«"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"output": "Ï"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"output": "Œ"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"action": "a102",
+					"output": "Ø"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"output": "Ú"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"action": "a96",
+					"deadKey": "9"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"output": "Ĳ"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"action": "a93",
+					"deadKey": "8"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "¬"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": "Ò"
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "¿"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"output": "Ñ"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"action": "a113",
+					"deadKey": "6"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"output": "Ó"
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"action": "a60",
+					"deadKey": "3"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": ","
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "\u001d"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "\u001c"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "\u001f"
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "\u001e"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "\\"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "`"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1692,6 +4473,16 @@
 					"keyName": "1",
 					"output": "¡"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"output": "™"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"output": "£"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1707,10 +4498,452 @@
 					"keyName": "5",
 					"output": "∞"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"output": "≠"
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"output": "ª"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"output": "¶"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"output": "–"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"output": "•"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"output": "º"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "‘"
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"output": "ø"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"output": "¨"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "“"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"output": "^"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"output": "π"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"output": "¬"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"output": "∆"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"output": "æ"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"output": "˚"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"output": "…"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "«"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": "≤"
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "÷"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"output": "~"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"output": "µ"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"output": "≥"
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"output": "`"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": "."
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "\u001d"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "\u001c"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "\u001f"
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "\u001e"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "\\"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "_"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		},
@@ -1812,6 +5045,16 @@
 					"keyName": "1",
 					"output": "1"
 				},
+				"19": {
+					"code": 19,
+					"keyName": "2",
+					"output": "2"
+				},
+				"20": {
+					"code": 20,
+					"keyName": "3",
+					"output": "3"
+				},
 				"21": {
 					"code": 21,
 					"keyName": "4",
@@ -1827,10 +5070,454 @@
 					"keyName": "5",
 					"output": "5"
 				},
+				"24": {
+					"code": 24,
+					"keyName": "=",
+					"action": "a27",
+					"output": "="
+				},
+				"25": {
+					"code": 25,
+					"keyName": "9",
+					"output": "9"
+				},
+				"26": {
+					"code": 26,
+					"keyName": "7",
+					"output": "7"
+				},
+				"27": {
+					"code": 27,
+					"keyName": "-",
+					"output": "\u001f"
+				},
+				"28": {
+					"code": 28,
+					"keyName": "8",
+					"output": "8"
+				},
+				"29": {
+					"code": 29,
+					"keyName": "0",
+					"output": "0"
+				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
 					"output": "\u001d"
+				},
+				"31": {
+					"code": 31,
+					"keyName": "O",
+					"output": "\u000f"
+				},
+				"32": {
+					"code": 32,
+					"keyName": "U",
+					"output": "\u0015"
+				},
+				"33": {
+					"code": 33,
+					"keyName": "[",
+					"output": "\u001b"
+				},
+				"34": {
+					"code": 34,
+					"keyName": "I",
+					"output": "\t"
+				},
+				"35": {
+					"code": 35,
+					"keyName": "P",
+					"output": "\u0010"
+				},
+				"36": {
+					"code": 36,
+					"keyName": "Return",
+					"output": "\r"
+				},
+				"37": {
+					"code": 37,
+					"keyName": "L",
+					"output": "\f"
+				},
+				"38": {
+					"code": 38,
+					"keyName": "J",
+					"output": "\n"
+				},
+				"39": {
+					"code": 39,
+					"keyName": "'",
+					"output": "'"
+				},
+				"40": {
+					"code": 40,
+					"keyName": "K",
+					"output": "\u000b"
+				},
+				"41": {
+					"code": 41,
+					"keyName": ";",
+					"output": ";"
+				},
+				"42": {
+					"code": 42,
+					"keyName": "\\",
+					"output": "\u001c"
+				},
+				"43": {
+					"code": 43,
+					"keyName": ",",
+					"output": ","
+				},
+				"44": {
+					"code": 44,
+					"keyName": "/",
+					"output": "/"
+				},
+				"45": {
+					"code": 45,
+					"keyName": "N",
+					"output": "\u000e"
+				},
+				"46": {
+					"code": 46,
+					"keyName": "M",
+					"output": "\r"
+				},
+				"47": {
+					"code": 47,
+					"keyName": ".",
+					"output": "."
+				},
+				"48": {
+					"code": 48,
+					"keyName": "Tab",
+					"output": "\t"
+				},
+				"49": {
+					"code": 49,
+					"keyName": "Space",
+					"action": "a80",
+					"output": " "
+				},
+				"50": {
+					"code": 50,
+					"keyName": "`",
+					"output": "`"
+				},
+				"51": {
+					"code": 51,
+					"keyName": "Delete",
+					"output": "\b"
+				},
+				"52": {
+					"code": 52,
+					"keyName": "Enter",
+					"output": "\u0003"
+				},
+				"53": {
+					"code": 53,
+					"keyName": "Escape",
+					"output": "\u001b"
+				},
+				"64": {
+					"code": 64,
+					"keyName": "code64",
+					"output": "\u0010"
+				},
+				"65": {
+					"code": 65,
+					"keyName": "KP.",
+					"output": "."
+				},
+				"66": {
+					"code": 66,
+					"keyName": "code66",
+					"output": "\u001d"
+				},
+				"67": {
+					"code": 67,
+					"keyName": "KP*",
+					"output": "*"
+				},
+				"69": {
+					"code": 69,
+					"keyName": "KP+",
+					"output": "+"
+				},
+				"70": {
+					"code": 70,
+					"keyName": "code70",
+					"output": "\u001c"
+				},
+				"71": {
+					"code": 71,
+					"keyName": "code71",
+					"output": "\u001b"
+				},
+				"72": {
+					"code": 72,
+					"keyName": "code72",
+					"output": "\u001f"
+				},
+				"75": {
+					"code": 75,
+					"keyName": "KP/",
+					"output": "/"
+				},
+				"76": {
+					"code": 76,
+					"keyName": "KPEnter",
+					"output": "\u0003"
+				},
+				"77": {
+					"code": 77,
+					"keyName": "code77",
+					"output": "\u001e"
+				},
+				"78": {
+					"code": 78,
+					"keyName": "KP-",
+					"output": "-"
+				},
+				"79": {
+					"code": 79,
+					"keyName": "code79",
+					"output": "\u0010"
+				},
+				"80": {
+					"code": 80,
+					"keyName": "code80",
+					"output": "\u0010"
+				},
+				"81": {
+					"code": 81,
+					"keyName": "KP=",
+					"output": "="
+				},
+				"82": {
+					"code": 82,
+					"keyName": "KP0",
+					"output": "0"
+				},
+				"83": {
+					"code": 83,
+					"keyName": "KP1",
+					"output": "1"
+				},
+				"84": {
+					"code": 84,
+					"keyName": "KP2",
+					"output": "2"
+				},
+				"85": {
+					"code": 85,
+					"keyName": "KP3",
+					"output": "3"
+				},
+				"86": {
+					"code": 86,
+					"keyName": "KP4",
+					"output": "4"
+				},
+				"87": {
+					"code": 87,
+					"keyName": "KP5",
+					"output": "5"
+				},
+				"88": {
+					"code": 88,
+					"keyName": "KP6",
+					"output": "6"
+				},
+				"89": {
+					"code": 89,
+					"keyName": "KP7",
+					"output": "7"
+				},
+				"91": {
+					"code": 91,
+					"keyName": "KP8",
+					"output": "8"
+				},
+				"92": {
+					"code": 92,
+					"keyName": "KP9",
+					"output": "9"
+				},
+				"93": {
+					"code": 93,
+					"keyName": "ISO§",
+					"output": "|"
+				},
+				"94": {
+					"code": 94,
+					"keyName": "ISO_backslash",
+					"output": "_"
+				},
+				"95": {
+					"code": 95,
+					"keyName": "ISO_comma",
+					"output": ","
+				},
+				"96": {
+					"code": 96,
+					"keyName": "F5",
+					"output": "\u0010"
+				},
+				"97": {
+					"code": 97,
+					"keyName": "F6",
+					"output": "\u0010"
+				},
+				"98": {
+					"code": 98,
+					"keyName": "F7",
+					"output": "\u0010"
+				},
+				"99": {
+					"code": 99,
+					"keyName": "F3",
+					"output": "\u0010"
+				},
+				"100": {
+					"code": 100,
+					"keyName": "F8",
+					"output": "\u0010"
+				},
+				"101": {
+					"code": 101,
+					"keyName": "F9",
+					"output": "\u0010"
+				},
+				"102": {
+					"code": 102,
+					"keyName": "code102",
+					"action": "a80",
+					"output": " "
+				},
+				"103": {
+					"code": 103,
+					"keyName": "F11",
+					"output": "\u0010"
+				},
+				"104": {
+					"code": 104,
+					"keyName": "code104",
+					"action": "a80",
+					"output": " "
+				},
+				"105": {
+					"code": 105,
+					"keyName": "F13",
+					"output": "\u0010"
+				},
+				"106": {
+					"code": 106,
+					"keyName": "code106",
+					"output": "\u0010"
+				},
+				"107": {
+					"code": 107,
+					"keyName": "F14",
+					"output": "\u0010"
+				},
+				"108": {
+					"code": 108,
+					"keyName": "code108",
+					"output": "\u0010"
+				},
+				"109": {
+					"code": 109,
+					"keyName": "F10",
+					"output": "\u0010"
+				},
+				"110": {
+					"code": 110,
+					"keyName": "code110",
+					"output": "\u0010"
+				},
+				"111": {
+					"code": 111,
+					"keyName": "F12",
+					"output": "\u0010"
+				},
+				"112": {
+					"code": 112,
+					"keyName": "code112",
+					"output": "\u0010"
+				},
+				"113": {
+					"code": 113,
+					"keyName": "F15",
+					"output": "\u0010"
+				},
+				"114": {
+					"code": 114,
+					"keyName": "Help/Insert",
+					"output": "\u0005"
+				},
+				"115": {
+					"code": 115,
+					"keyName": "Home",
+					"output": "\u0001"
+				},
+				"116": {
+					"code": 116,
+					"keyName": "PageUp",
+					"output": "\u000b"
+				},
+				"117": {
+					"code": 117,
+					"keyName": "ForwardDelete",
+					"output": ""
+				},
+				"118": {
+					"code": 118,
+					"keyName": "F4",
+					"output": "\u0010"
+				},
+				"119": {
+					"code": 119,
+					"keyName": "End",
+					"output": "\u0004"
+				},
+				"120": {
+					"code": 120,
+					"keyName": "F2",
+					"output": "\u0010"
+				},
+				"121": {
+					"code": 121,
+					"keyName": "PageDown",
+					"output": "\f"
+				},
+				"122": {
+					"code": 122,
+					"keyName": "F1",
+					"output": "\u0010"
+				},
+				"123": {
+					"code": 123,
+					"keyName": "Left",
+					"output": "\u001c"
+				},
+				"124": {
+					"code": 124,
+					"keyName": "Right",
+					"output": "\u001d"
+				},
+				"125": {
+					"code": 125,
+					"keyName": "Down",
+					"output": "\u001f"
+				},
+				"126": {
+					"code": 126,
+					"keyName": "Up",
+					"output": "\u001e"
 				}
 			}
 		}
@@ -2084,7 +5771,7 @@
 			}
 		},
 		"6": {
-			"terminator": "Ω",
+			"terminator": "α",
 			"compositions": {
 				"a0": "¹",
 				"a1": "₊",

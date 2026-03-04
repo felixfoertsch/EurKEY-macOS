@@ -91,7 +91,7 @@ for ver in "${VERSIONS[@]}"; do
 	<key>KLInfo_${layout_name}</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
-		<false/>
+		<true/>
 		<key>TISIconIsTemplate</key>
 		<true/>
 		<key>TISInputSourceID</key>

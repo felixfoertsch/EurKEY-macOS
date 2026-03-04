@@ -71,9 +71,23 @@ v2.0 renames all dead key states to their initializing key combination:
 | ⌥⇧6            | ˇ               |
 | ⌥7              | ˚               |
 | ⌥⇧7            | ¯               |
-| ⌥m              | Ω               |
+| ⌥m              | α               |
 | ⌥⇧m            | √               |
 | ⌥\              | ¬               |
+
+## Customization with Karabiner-Elements
+
+macOS `.keylayout` files cannot distinguish between the FN key and other modifiers, and cannot remap FN to act as a custom modifier. To use FN (or any other key) as an additional modifier layer, use [Karabiner-Elements](https://karabiner-elements.pqrs.org/):
+
+1. Install Karabiner-Elements.
+2. In **Simple Modifications**, remap `fn` to a modifier key (e.g., `right_option`).
+3. In **Complex Modifications**, add rules that map your desired key combinations to Unicode character outputs.
+
+[Hammerspoon](https://www.hammerspoon.org/) is an alternative for Lua-based automation but does not intercept keystrokes at the same level as Karabiner.
+
+## Known issues
+
+- **Icon not visible in keyboard switcher badge (macOS Sonoma/Sequoia):** The template icon (which adapts to light/dark mode) disappears in the input source switching badge attached to text fields. This is a macOS bug affecting third-party template icons — Apple's built-in layouts are not affected. Non-template icons work correctly but lose dark mode adaptation.
 
 ## Notes on Ukelele and template icons
 
