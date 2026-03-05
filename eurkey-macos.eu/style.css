@@ -1,0 +1,404 @@
+/* Reset & base */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	color: #1a1a2e;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: #003399;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+/* Nav */
+.nav {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.nav-inner {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3.5rem;
+}
+
+.nav-logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 700;
+	font-size: 1.125rem;
+	color: #1a1a2e;
+	text-decoration: none;
+}
+
+.nav-logo img {
+	border-radius: 6px;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.nav-links a {
+	color: #5a6178;
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: color 0.15s;
+}
+
+.nav-links a:hover {
+	color: #003399;
+	text-decoration: none;
+}
+
+.nav-github {
+	display: flex;
+	align-items: center;
+}
+
+/* Hero */
+.hero {
+	text-align: center;
+	padding: 5rem 1.5rem 4rem;
+	background: linear-gradient(180deg, #f0f4ff 0%, #fff 100%);
+}
+
+.hero-icon {
+	border-radius: 20px;
+	margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	margin-bottom: 1rem;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hero-sub {
+	font-size: 1.15rem;
+	color: #5a6178;
+	max-width: 480px;
+	margin: 0 auto 2rem;
+}
+
+.btn {
+	display: inline-block;
+	background: #003399;
+	color: #fff;
+	padding: 0.75rem 2rem;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background 0.15s;
+}
+
+.btn:hover {
+	background: #002266;
+	text-decoration: none;
+}
+
+/* Features */
+.features {
+	padding: 4rem 0;
+}
+
+.features h2 {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin-bottom: 2.5rem;
+}
+
+.feature-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
+}
+
+.feature-card {
+	background: #f5f7fa;
+	border: 1px solid rgba(0, 0, 0, 0.06);
+	border-radius: 12px;
+	padding: 1.5rem;
+	text-align: center;
+}
+
+.feature-icon {
+	font-size: 2rem;
+	margin-bottom: 0.75rem;
+}
+
+.feature-card h3 {
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+	font-size: 0.875rem;
+	color: #5a6178;
+	line-height: 1.5;
+}
+
+/* Layout preview */
+.layout-preview {
+	padding: 4rem 0;
+	background: #f5f7fa;
+}
+
+.layout-preview h2 {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+.section-sub {
+	text-align: center;
+	color: #5a6178;
+	margin-bottom: 2rem;
+}
+
+.layout-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.tab {
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	padding: 0.5rem 1.25rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.15s;
+	color: #5a6178;
+}
+
+.tab:hover {
+	border-color: #003399;
+	color: #003399;
+}
+
+.tab.active {
+	background: #003399;
+	border-color: #003399;
+	color: #fff;
+}
+
+.layout-viewer {
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.layout-viewer iframe {
+	width: 100%;
+	height: 600px;
+	border: none;
+}
+
+.layout-fallback {
+	text-align: center;
+	padding: 0.75rem;
+	font-size: 0.875rem;
+	color: #5a6178;
+	border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Installation */
+.install {
+	padding: 4rem 0;
+}
+
+.install h2 {
+	text-align: center;
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin-bottom: 2.5rem;
+}
+
+.install-steps {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.step {
+	display: flex;
+	gap: 1.25rem;
+	margin-bottom: 2.5rem;
+	position: relative;
+}
+
+.step:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	left: 1.25rem;
+	top: 3rem;
+	bottom: -1.25rem;
+	width: 2px;
+	background: #e0e4ed;
+}
+
+.step-number {
+	flex-shrink: 0;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: #003399;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.step-content h3 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin-bottom: 0.375rem;
+}
+
+.step-content p {
+	color: #5a6178;
+	font-size: 0.95rem;
+}
+
+.step-content code {
+	background: #f0f4ff;
+	padding: 0.125rem 0.375rem;
+	border-radius: 4px;
+	font-size: 0.85rem;
+}
+
+.install-screenshots {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+.install-screenshots img {
+	border-radius: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+.footer {
+	border-top: 1px solid rgba(0, 0, 0, 0.08);
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.footer p {
+	font-size: 0.85rem;
+	color: #5a6178;
+	margin-bottom: 0.25rem;
+}
+
+.footer a {
+	color: #5a6178;
+	text-decoration: underline;
+}
+
+.footer a:hover {
+	color: #003399;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.hero h1 {
+		font-size: 1.75rem;
+	}
+
+	.hero-sub {
+		font-size: 1rem;
+	}
+
+	.feature-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.layout-viewer iframe {
+		height: 400px;
+	}
+}
+
+@media (max-width: 480px) {
+	.nav-links a:not(.nav-github) {
+		display: none;
+	}
+
+	.hero {
+		padding: 3rem 1.5rem 2.5rem;
+	}
+
+	.hero h1 {
+		font-size: 1.5rem;
+	}
+
+	.feature-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.layout-viewer iframe {
+		height: 300px;
+	}
+
+	.install-screenshots {
+		grid-template-columns: 1fr;
+	}
+}

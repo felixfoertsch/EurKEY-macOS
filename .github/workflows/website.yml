@@ -1,0 +1,42 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'eurkey-macos.eu/**'
+      - 'src/keylayouts/**'
+      - 'fonts/**'
+      - 'scripts/generate_layout_pdf.py'
+      - 'scripts/parse_keylayout.py'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate layout PDFs
+        run: |
+          pip install fpdf2
+          python3 scripts/generate_layout_pdf.py -o eurkey-macos.eu/pdf/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: eurkey-macos.eu
+      - id: deployment
+        uses: actions/deploy-pages@v4
