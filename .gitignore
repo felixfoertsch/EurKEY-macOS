@@ -23,6 +23,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Worktrees
+.worktrees/
+
 # IDEs
 .idea/
 .vscode/
