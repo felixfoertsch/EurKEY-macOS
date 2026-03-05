@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from parse_keylayout import parse_keylayout, TYPING_KEY_CODES, MODIFIER_LABELS, KEY_CODE_NAMES
 
-BUNDLE_DIR = Path(__file__).parent.parent / "EurKey-macOS.bundle" / "Contents" / "Resources"
+BUNDLE_DIR = Path(__file__).parent.parent / "build" / "EurKey-macOS.bundle" / "Contents" / "Resources"
 
 # modifier indices that contain meaningful typing output
 # (exclude index 6 = Command+Option and 7 = Control — these are system shortcuts)

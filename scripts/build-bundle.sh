@@ -9,7 +9,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-BUNDLE_DIR="${PROJECT_DIR}/EurKey-macOS.bundle"
+BUILD_DIR="${PROJECT_DIR}/build"
+BUNDLE_DIR="${BUILD_DIR}/EurKey-macOS.bundle"
 CONTENTS_DIR="${BUNDLE_DIR}/Contents"
 RESOURCES_DIR="${CONTENTS_DIR}/Resources"
 
@@ -25,37 +26,27 @@ BUNDLE_NAME="EurKEY-macOS"
 # layout versions to include
 VERSIONS=("v1.2" "v1.3" "v1.4" "v2.0")
 
+SRC_DIR="${PROJECT_DIR}/src"
+
 echo "Building ${BUNDLE_NAME} ${VERSION}"
 echo "Bundle: ${BUNDLE_DIR}"
 echo
 
-# --- validate that all required files exist ---
-errors=0
+# --- assemble bundle from src/ ---
+rm -rf "${BUNDLE_DIR}"
+mkdir -p "${RESOURCES_DIR}"
+
 for ver in "${VERSIONS[@]}"; do
-	keylayout="${RESOURCES_DIR}/EurKEY ${ver}.keylayout"
-	icns="${RESOURCES_DIR}/EurKEY ${ver}.icns"
-	if [[ ! -f "${keylayout}" ]]; then
-		echo "ERROR: missing ${keylayout}"
-		errors=$((errors + 1))
-	fi
-	if [[ ! -f "${icns}" ]]; then
-		echo "ERROR: missing ${icns}"
-		errors=$((errors + 1))
-	fi
+	cp "${SRC_DIR}/keylayouts/EurKEY ${ver}.keylayout" "${RESOURCES_DIR}/"
+	cp "${SRC_DIR}/icons/EurKEY ${ver}.icns" "${RESOURCES_DIR}/"
 done
 
 for lang in en de es; do
-	strings="${RESOURCES_DIR}/${lang}.lproj/InfoPlist.strings"
-	if [[ ! -f "${strings}" ]]; then
-		echo "ERROR: missing ${strings}"
-		errors=$((errors + 1))
-	fi
+	mkdir -p "${RESOURCES_DIR}/${lang}.lproj"
+	cp "${SRC_DIR}/lproj/${lang}.lproj/InfoPlist.strings" "${RESOURCES_DIR}/${lang}.lproj/"
 done
 
-if [[ $errors -gt 0 ]]; then
-	echo "FAILED: ${errors} missing file(s)"
-	exit 1
-fi
+echo "Assembled bundle from src/"
 
 # --- generate Info.plist ---
 cat > "${CONTENTS_DIR}/Info.plist" << 'PLIST_HEADER'

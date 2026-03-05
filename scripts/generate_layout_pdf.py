@@ -82,9 +82,12 @@ DISPLAY_LAYERS = [
 ]
 
 # Layout dimensions (mm)
-KU = 16        # key unit size
+KU = 20        # key unit size
 KEY_GAP = 1    # gap between keys
-MARGIN = 12    # page margin
+MARGIN = 10    # page margin
+# 15 keys × 20mm = 300mm + 2×10mm margins = 320mm → custom page width
+PAGE_W = 320
+PAGE_H = 210   # A4 height
 
 # Colors (RGB tuples)
 C_KEY_BG = (242, 242, 242)
@@ -92,22 +95,10 @@ C_KEY_BORDER = (190, 190, 190)
 C_DEAD_BG = (255, 238, 204)
 C_MOD_BG = (225, 225, 230)
 
-# Font candidates (in priority order)
-FONT_PATHS = [
-	"/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
-	"/System/Library/Fonts/SFNS.ttf",
-	"/System/Library/Fonts/Supplemental/Tahoma.ttf",
-	"/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-	"/usr/share/fonts/TTF/DejaVuSans.ttf",
-]
-
-
-def find_font():
-	"""Find a system font with good Unicode coverage."""
-	for path in FONT_PATHS:
-		if Path(path).exists():
-			return path
-	return None
+# Font paths (relative to project root)
+FONT_DIR = Path(__file__).parent.parent / "fonts" / "iosevka"
+FONT_REGULAR = FONT_DIR / "IosevkaFixed-Regular.ttf"
+FONT_BOLD = FONT_DIR / "IosevkaFixed-Bold.ttf"
 
 
 def safe_char(c):
@@ -139,24 +130,22 @@ def get_key_info(data, mod_idx, code_str):
 
 
 class LayoutPDF(FPDF):
-	def __init__(self, layout_name, font_path=None):
-		super().__init__(orientation="L", unit="mm", format="A4")
+	def __init__(self, layout_name):
+		super().__init__(orientation="L", unit="mm", format=(PAGE_H, PAGE_W))
 		self.layout_name = layout_name
 		self.set_auto_page_break(auto=False)
-		self._has_unicode = False
 
-		if font_path:
-			try:
-				self.add_font("Layout", "", font_path)
-				self._has_unicode = True
-			except Exception as e:
-				print(f"  Warning: could not load font {font_path}: {e}")
+		if not FONT_REGULAR.exists():
+			print(f"ERROR: font not found: {FONT_REGULAR}")
+			print("Run: scripts/download-fonts.sh or see fonts/README.md")
+			sys.exit(1)
+
+		self.add_font("Iosevka", "", str(FONT_REGULAR))
+		if FONT_BOLD.exists():
+			self.add_font("Iosevka", "B", str(FONT_BOLD))
 
 	def _font(self, size, bold=False):
-		if self._has_unicode:
-			self.set_font("Layout", "", size)
-		else:
-			self.set_font("Helvetica", "B" if bold else "", size)
+		self.set_font("Iosevka", "B" if bold else "", size)
 
 	def _color(self, rgb):
 		self.set_text_color(*rgb)
@@ -170,7 +159,7 @@ class LayoutPDF(FPDF):
 		self.add_page()
 
 		# title
-		self._font(13, bold=True)
+		self._font(18, bold=True)
 		self._color((0, 0, 0))
 		self.set_xy(MARGIN, 7)
 		self.cell(0, 7, self.layout_name)
@@ -195,9 +184,9 @@ class LayoutPDF(FPDF):
 				x += width * KU
 
 	def _draw_legend(self):
-		y = 16
+		y = 17
 		x = MARGIN
-		self._font(5)
+		self._font(8)
 		items = [
 			((0, 0, 0), "Base"),
 			((0, 40, 170), "Shift"),
@@ -226,7 +215,7 @@ class LayoutPDF(FPDF):
 
 		# show physical label for modifier keys
 		if label and key_code is None:
-			self._font(5)
+			self._font(8)
 			self._color((130, 130, 130))
 			self.set_xy(x, y + h / 2 - 2)
 			self.cell(w, 4, label, align="C")
@@ -261,19 +250,19 @@ class LayoutPDF(FPDF):
 			self._color(color)
 
 			if pos == "bottom_left":
-				self._font(8)
+				self._font(12)
 				self.set_xy(x + pad, mid_y - 0.5)
 				self.cell(w / 2 - pad, h / 2, char)
 			elif pos == "top_left":
-				self._font(5.5)
+				self._font(9)
 				self.set_xy(x + pad, y + pad)
 				self.cell(w / 2 - pad, 5, char)
 			elif pos == "bottom_right":
-				self._font(5.5)
+				self._font(9)
 				self.set_xy(mid_x, mid_y - 0.5)
 				self.cell(w / 2 - pad, h / 2, char, align="R")
 			elif pos == "top_right":
-				self._font(5.5)
+				self._font(9)
 				self.set_xy(mid_x, y + pad)
 				self.cell(w / 2 - pad, 5, char, align="R")
 
@@ -286,13 +275,13 @@ class LayoutPDF(FPDF):
 		actions = data.get("actions", {})
 
 		self.add_page()
-		self._font(12, bold=True)
+		self._font(18, bold=True)
 		self._color((0, 0, 0))
 		self.set_xy(MARGIN, 8)
 		self.cell(0, 7, f"{self.layout_name} — Dead Key Compositions")
 
 		y = 20
-		col_w = 12  # width per composition entry
+		col_w = 14  # width per composition entry
 		max_cols = int((self.w - 2 * MARGIN) / col_w)
 
 		for state_name in sorted(dead_keys.keys()):
@@ -313,14 +302,14 @@ class LayoutPDF(FPDF):
 
 			# estimate space needed
 			num_rows = (len(pairs) + max_cols - 1) // max_cols
-			needed = 10 + num_rows * 4.5
+			needed = 10 + num_rows * 5.5
 
 			if y + needed > self.h - 10:
 				self.add_page()
 				y = 12
 
 			# header
-			self._font(7, bold=True)
+			self._font(9, bold=True)
 			self._color((0, 0, 0))
 			self.set_xy(MARGIN, y)
 			display = state_name
@@ -331,18 +320,18 @@ class LayoutPDF(FPDF):
 			col = 0
 			for base, composed in pairs:
 				cx = MARGIN + col * col_w
-				self._font(5.5)
+				self._font(9)
 				self._color((100, 100, 100))
 				self.set_xy(cx, y)
-				self.cell(5, 4, base)
+				self.cell(5, 5, base)
 				self._color((0, 0, 0))
 				self.set_xy(cx + 4, y)
-				self.cell(7, 4, f"→{composed}")
+				self.cell(9, 5, f"→{composed}")
 
 				col += 1
 				if col >= max_cols:
 					col = 0
-					y += 4.5
+					y += 5.5
 
 			if col > 0:
 				y += 4.5
@@ -355,13 +344,8 @@ class LayoutPDF(FPDF):
 
 def generate_pdf(version, output_dir):
 	"""Generate a PDF for the given layout version."""
-	bundle_dir = (
-		Path(__file__).parent.parent
-		/ "EurKey-macOS.bundle"
-		/ "Contents"
-		/ "Resources"
-	)
-	keylayout = bundle_dir / f"EurKEY {version}.keylayout"
+	src_dir = Path(__file__).parent.parent / "src" / "keylayouts"
+	keylayout = src_dir / f"EurKEY {version}.keylayout"
 
 	if not keylayout.exists():
 		print(f"ERROR: {keylayout} not found")
@@ -370,13 +354,7 @@ def generate_pdf(version, output_dir):
 	print(f"Generating PDF for EurKEY {version}...")
 	data = parse_keylayout(str(keylayout))
 
-	font_path = find_font()
-	if font_path:
-		print(f"  Using font: {Path(font_path).name}")
-	else:
-		print("  Warning: no Unicode font found, falling back to Helvetica (limited charset)")
-
-	pdf = LayoutPDF(f"EurKEY {version}", font_path)
+	pdf = LayoutPDF(f"EurKEY {version}")
 	pdf.generate(data)
 
 	out = Path(output_dir)
@@ -394,9 +372,10 @@ def main():
 		default=["v1.2", "v1.3", "v1.4", "v2.0"],
 		help="Layout versions to generate (default: all)",
 	)
+	default_output = str(Path(__file__).parent.parent / "build")
 	parser.add_argument(
-		"--output", "-o", default="docs",
-		help="Output directory (default: docs/)",
+		"--output", "-o", default=default_output,
+		help="Output directory (default: build/)",
 	)
 	args = parser.parse_args()
 

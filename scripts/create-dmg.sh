@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 # Create a .dmg installer for EurKEY-macOS keyboard layouts.
 #
-# The DMG contains the keyboard layout bundle and a symlink to
-# /Library/Keyboard Layouts/ for drag-and-drop installation.
+# The DMG contains the keyboard layout bundle, layout PDFs, and a symlink
+# to /Library/Keyboard Layouts/ for drag-and-drop installation.
 #
-# Usage: bash scripts/create-dmg.sh [--version YYYY.MM.DD]
+# Auto-builds the bundle and PDFs if missing.
+#
+# Usage: bash scripts/build-dmg.sh [--version YYYY.MM.DD]
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-BUNDLE_DIR="${PROJECT_DIR}/EurKey-macOS.bundle"
 BUILD_DIR="${PROJECT_DIR}/build"
+BUNDLE_DIR="${BUILD_DIR}/EurKey-macOS.bundle"
 
 # parse arguments
 VERSION="${1:-$(date +%Y.%m.%d)}"
@@ -24,12 +26,15 @@ STAGING_DIR="${BUILD_DIR}/dmg-staging"
 
 echo "Creating DMG: ${DMG_NAME}"
 
-# --- ensure bundle is built ---
+# --- auto-build bundle if missing ---
 if [[ ! -f "${BUNDLE_DIR}/Contents/Info.plist" ]]; then
-	echo "ERROR: bundle not found at ${BUNDLE_DIR}"
-	echo "Run scripts/build-bundle.sh first"
-	exit 1
+	echo "Bundle not found, building..."
+	bash "${SCRIPT_DIR}/build-bundle.sh" --version "${VERSION}"
 fi
+
+# --- auto-build PDFs ---
+echo "Building PDFs..."
+bash "${SCRIPT_DIR}/build-pdf.sh" --output "${BUILD_DIR}"
 
 # --- prepare staging directory ---
 rm -rf "${STAGING_DIR}"
@@ -37,6 +42,9 @@ mkdir -p "${STAGING_DIR}"
 
 # copy the bundle
 cp -R "${BUNDLE_DIR}" "${STAGING_DIR}/"
+
+# copy layout PDFs
+cp "${BUILD_DIR}"/eurkey-*-layout.pdf "${STAGING_DIR}/"
 
 # create symlink to installation target
 ln -s "/Library/Keyboard Layouts" "${STAGING_DIR}/Install Here (Keyboard Layouts)"
