@@ -445,72 +445,58 @@ img {
 		0 0.5px 0 2px #464646;
 }
 
-/* Dead key panel */
-.dead-key-panel {
-	max-width: fit-content;
-	margin: 1.5rem auto 0;
-	background: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 8px;
-	padding: 1.25rem;
-	position: relative;
+/* Dead key mode — compositions shown on keyboard */
+.keyboard--dead-mode .key--no-composition {
+	opacity: 0.25;
 }
 
-.dead-key-panel h4 {
-	font-size: 1rem;
-	font-weight: 600;
-	margin-bottom: 1rem;
+.keyboard--dead-mode .key--has-composition {
+	background: linear-gradient(to bottom, #fef9e7, #fef3cd 95%, #f5e6a8);
+}
+
+.keyboard--dead-mode .key--has-composition .key-char--shift-option,
+.keyboard--dead-mode .key--has-composition .key-char--option {
+	visibility: hidden;
+}
+
+.keyboard--dead-mode .key--has-composition .key-char--base {
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.keyboard--dead-mode .key--has-composition .key-char--shift {
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.keyboard--dead-mode .key--spacebar-label .key-mod-label {
+	font-size: 15px;
+	font-weight: 700;
 	color: #1a1a2e;
+	letter-spacing: 0.02em;
 }
 
-.dead-key-close {
-	position: absolute;
-	top: 0.75rem;
-	right: 0.75rem;
-	border: none;
-	background: none;
-	font-size: 1.25rem;
+.keyboard--dead-mode .key--dead-active {
+	background: linear-gradient(to bottom, #d4e8ff, #b8d4f0 95%, #a0c0e0);
 	cursor: pointer;
+	opacity: 1;
+}
+
+
+/* Keyboard hint */
+.keyboard-hint {
+	text-align: center;
+	font-size: 0.8rem;
 	color: #5a6178;
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
+	margin-top: 0.75rem;
 }
 
-.dead-key-close:hover {
-	background: #f0f0f0;
-	color: #1a1a2e;
-}
-
-.dead-key-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-	gap: 0.5rem;
-}
-
-.dead-key-pair {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.25rem;
-	background: #f5f7fa;
-	border-radius: 4px;
-	padding: 0.375rem 0.5rem;
+.keyboard-hint kbd {
+	background: #e0e4ed;
+	border-radius: 3px;
+	padding: 0.1rem 0.35rem;
 	font-family: "SF Mono", "Menlo", "Consolas", monospace;
-	font-size: 0.875rem;
-}
-
-.dead-key-base {
-	color: #5a6178;
-}
-
-.dead-key-arrow {
-	color: #aaa;
 	font-size: 0.75rem;
-}
-
-.dead-key-composed {
-	color: #1a1a2e;
-	font-weight: 600;
 }
 
 /* PDF links */

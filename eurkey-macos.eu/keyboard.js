@@ -5,29 +5,29 @@ const KEYBOARD_ROWS = [
 		[10, 1.0, "§"], [18, 1.0, "1"], [19, 1.0, "2"], [20, 1.0, "3"],
 		[21, 1.0, "4"], [23, 1.0, "5"], [22, 1.0, "6"], [26, 1.0, "7"],
 		[28, 1.0, "8"], [25, 1.0, "9"], [29, 1.0, "0"], [27, 1.0, "-"],
-		[24, 1.0, "="], [null, 1.5, "⌫"],
+		[24, 1.0, "="], [null, 1.5, "\u232b"],
 	],
 	[
-		[null, 1.5, "⇥"], [12, 1.0, "Q"], [13, 1.0, "W"], [14, 1.0, "E"],
+		[null, 1.5, "\u21e5"], [12, 1.0, "Q"], [13, 1.0, "W"], [14, 1.0, "E"],
 		[15, 1.0, "R"], [17, 1.0, "T"], [16, 1.0, "Y"], [32, 1.0, "U"],
 		[34, 1.0, "I"], [31, 1.0, "O"], [35, 1.0, "P"], [33, 1.0, "["],
 		[30, 1.0, "]"], ["spacer", 1.0, ""],
 	],
 	[
-		[null, 1.75, "⇪"], [0, 1.0, "A"], [1, 1.0, "S"], [2, 1.0, "D"],
+		[null, 1.75, "\u21ea"], [0, 1.0, "A"], [1, 1.0, "S"], [2, 1.0, "D"],
 		[3, 1.0, "F"], [5, 1.0, "G"], [4, 1.0, "H"], [38, 1.0, "J"],
 		[40, 1.0, "K"], [37, 1.0, "L"], [41, 1.0, ";"], [39, 1.0, "'"],
-		[42, 1.0, "\\"], ["enter", 0.75, "⏎"],
+		[42, 1.0, "\\"], ["enter", 0.75, "\u23ce"],
 	],
 	[
-		[null, 1.25, "⇧"], [50, 1.0, "`"], [6, 1.0, "Z"], [7, 1.0, "X"],
+		[null, 1.25, "\u21e7"], [50, 1.0, "`"], [6, 1.0, "Z"], [7, 1.0, "X"],
 		[8, 1.0, "C"], [9, 1.0, "V"], [11, 1.0, "B"], [45, 1.0, "N"],
 		[46, 1.0, "M"], [43, 1.0, ","], [47, 1.0, "."], [44, 1.0, "/"],
-		[null, 2.25, "⇧"],
+		[null, 2.25, "\u21e7"],
 	],
 	[
-		[null, 1.0, "fn"], [null, 1.0, "⌃"], [null, 1.0, "⌥"], [null, 1.25, "⌘"],
-		[null, 5.0, ""], [null, 1.25, "⌘"], [null, 1.0, "⌥"],
+		[null, 1.0, "fn"], [null, 1.0, "\u2303"], [null, 1.0, "\u2325"], [null, 1.25, "\u2318"],
+		["spacebar", 5.0, ""], [null, 1.25, "\u2318"], [null, 1.0, "\u2325"],
 		["arrow-cluster", 3.0, ""],
 	],
 ];
@@ -46,9 +46,31 @@ const LAYERS = [
 
 const MOD_LABELS = { "\u21e7": "shift", "\u2325": "option" };
 
+/* Browser keyCode → macOS key code mapping (US/ISO QWERTY) */
+const BROWSER_TO_MAC = {
+	65: 0, 83: 1, 68: 2, 70: 3, 72: 4, 71: 5, 90: 6, 88: 7,
+	67: 8, 86: 9, 192: 50, 66: 11, 81: 12, 87: 13, 69: 14, 82: 15,
+	89: 16, 84: 17, 49: 18, 50: 19, 51: 20, 52: 21, 54: 22, 53: 23,
+	187: 24, 57: 25, 55: 26, 189: 27, 56: 28, 48: 29, 221: 30,
+	79: 31, 85: 32, 219: 33, 73: 34, 80: 35, 76: 37, 74: 38,
+	222: 39, 75: 40, 186: 41, 220: 42, 188: 43, 191: 44, 78: 45,
+	77: 46, 190: 47, 191: 44, 171: 24, 173: 27, 61: 24, 59: 41,
+};
+
+const DEAD_KEY_NAMES = {
+	"\u00b4": "The Acutes", "`": "The Graves", "^": "The Circumflexes",
+	"~": "The Tildes", "\u00a8": "The Umlauts", "\u02c7": "The H\u00e1\u010deks",
+	"\u00af": "The Macrons", "\u02da": "The Rings & Dots",
+	"\u03b1": "The Greeks", "\u221a": "The Mathematicians",
+	"\u00ac": "The Navigators", "\u00a9": "The Navigators",
+	" ": "The Mathematicians",
+};
+
 const cache = new Map();
 let currentVersion = "v2.0";
 let currentData = null;
+let currentDeadKey = null;
+let keyElements = new Map();
 
 async function loadVersion(version) {
 	if (cache.has(version)) return cache.get(version);
@@ -81,9 +103,27 @@ function clearElement(el) {
 	while (el.firstChild) el.removeChild(el.firstChild);
 }
 
+/* --- Build composition lookup for a dead key --- */
+
+function buildCompositionMap(data, deadState) {
+	const dk = data.deadKeys[deadState];
+	if (!dk || !dk.compositions) return null;
+
+	const charMap = {};
+	for (const [actionId, composed] of Object.entries(dk.compositions)) {
+		const action = data.actions[actionId];
+		const base = action?.none || actionId;
+		if (base) charMap[base] = composed;
+	}
+	return charMap;
+}
+
+/* --- Render keyboard --- */
+
 function renderKeyboard(data) {
 	const kb = document.getElementById("keyboard");
 	clearElement(kb);
+	keyElements.clear();
 
 	for (const row of KEYBOARD_ROWS) {
 		const rowEl = document.createElement("div");
@@ -113,15 +153,21 @@ function renderKeyboard(data) {
 				spacerL.className = "arrow-key arrow-key--spacer";
 				const spacerR = document.createElement("div");
 				spacerR.className = "arrow-key arrow-key--spacer";
-				topRow.append(spacerL, makeArrowKey("▲"), spacerR);
+				topRow.append(spacerL, makeArrowKey("\u25b2"), spacerR);
 
 				const bottomRow = document.createElement("div");
 				bottomRow.className = "arrow-row";
-				for (const sym of ["◀", "▼", "▶"]) {
+				for (const sym of ["\u25c0", "\u25bc", "\u25b6"]) {
 					bottomRow.appendChild(makeArrowKey(sym));
 				}
 
 				keyEl.append(topRow, bottomRow);
+			} else if (keyCode === "spacebar") {
+				keyEl.classList.add("key--mod", "key--spacebar");
+				const span = document.createElement("span");
+				span.className = "key-mod-label";
+				span.textContent = label;
+				keyEl.appendChild(span);
 			} else if (keyCode === "spacer") {
 				keyEl.classList.add("key--spacer");
 			} else if (keyCode === "enter") {
@@ -138,6 +184,8 @@ function renderKeyboard(data) {
 				span.textContent = label;
 				keyEl.appendChild(span);
 			} else {
+				keyElements.set(keyCode, keyEl);
+
 				let hasDead = false;
 				let deadState = null;
 
@@ -159,7 +207,7 @@ function renderKeyboard(data) {
 				if (hasDead) {
 					keyEl.classList.add("key--dead");
 					keyEl.dataset.deadKey = deadState;
-					keyEl.addEventListener("click", () => showDeadKeyPanel(data, deadState));
+					keyEl.addEventListener("click", () => toggleDeadKeyMode(deadState));
 				}
 			}
 
@@ -170,48 +218,92 @@ function renderKeyboard(data) {
 	}
 }
 
-function showDeadKeyPanel(data, state) {
-	const panel = document.getElementById("dead-key-panel");
-	const title = document.getElementById("dead-key-title");
-	const grid = document.getElementById("dead-key-grid");
+/* --- Dead key mode --- */
 
-	const dk = data.deadKeys[state];
-	if (!dk) return;
+function toggleDeadKeyMode(deadState) {
+	if (currentDeadKey === deadState) {
+		exitDeadKeyMode();
+	} else {
+		enterDeadKeyMode(deadState);
+	}
+}
 
-	const terminator = dk.terminator || data.terminators[state] || "";
-	title.textContent = state + " \u2192 " + displayChar(terminator);
+function enterDeadKeyMode(deadState) {
+	if (!currentData) return;
+	const charMap = buildCompositionMap(currentData, deadState);
+	if (!charMap) return;
 
-	clearElement(grid);
-	const compositions = dk.compositions;
-	if (!compositions) return;
+	// clean up previous dead key mode if active
+	if (currentDeadKey) exitDeadKeyMode();
 
-	for (const [actionId, composed] of Object.entries(compositions)) {
-		const action = data.actions[actionId];
-		const base = action?.none || actionId;
+	currentDeadKey = deadState;
+	const kb = document.getElementById("keyboard");
+	kb.classList.add("keyboard--dead-mode");
 
-		const pair = document.createElement("div");
-		pair.className = "dead-key-pair";
-
-		const baseSpan = document.createElement("span");
-		baseSpan.className = "dead-key-base";
-		baseSpan.textContent = displayChar(base);
-
-		const arrow = document.createElement("span");
-		arrow.className = "dead-key-arrow";
-		arrow.textContent = "\u2192";
-
-		const composedSpan = document.createElement("span");
-		composedSpan.className = "dead-key-composed";
-		composedSpan.textContent = displayChar(composed);
-
-		pair.appendChild(baseSpan);
-		pair.appendChild(arrow);
-		pair.appendChild(composedSpan);
-		grid.appendChild(pair);
+	// show catchy name on spacebar
+	const dk = currentData.deadKeys[deadState];
+	const terminator = dk?.terminator || "";
+	const catchy = DEAD_KEY_NAMES[terminator] || "";
+	const spaceBar = kb.querySelector(".key--spacebar");
+	if (spaceBar) {
+		spaceBar.querySelector(".key-mod-label").textContent = catchy;
+		spaceBar.classList.add("key--spacebar-label");
 	}
 
-	panel.hidden = false;
-	panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+	for (const [keyCode, keyEl] of keyElements) {
+		const codeStr = String(keyCode);
+		const baseKey = currentData.keyMaps[MOD_BASE]?.keys[codeStr];
+		const shiftKey = currentData.keyMaps[MOD_SHIFT]?.keys[codeStr];
+		const baseChar = baseKey?.output || "";
+		const shiftChar = shiftKey?.output || "";
+
+		const baseComposed = charMap[baseChar] || "";
+		const shiftComposed = charMap[shiftChar] || "";
+
+		const spans = keyEl.querySelectorAll(".key-char");
+		// order: shift, shift-option, base, option
+		if (spans[0]) spans[0].textContent = displayChar(shiftComposed);
+		if (spans[1]) spans[1].textContent = "";
+		if (spans[2]) spans[2].textContent = displayChar(baseComposed);
+		if (spans[3]) spans[3].textContent = "";
+
+		if (keyEl.dataset.deadKey === deadState) {
+			keyEl.classList.add("key--dead-active");
+		} else if (baseComposed || shiftComposed) {
+			keyEl.classList.add("key--has-composition");
+			keyEl.classList.remove("key--no-composition");
+		} else {
+			keyEl.classList.add("key--no-composition");
+			keyEl.classList.remove("key--has-composition");
+		}
+	}
+}
+
+function exitDeadKeyMode() {
+	if (!currentDeadKey || !currentData) return;
+	currentDeadKey = null;
+
+	const kb = document.getElementById("keyboard");
+	kb.classList.remove("keyboard--dead-mode");
+
+	// restore spacebar
+	const spaceBar = kb.querySelector(".key--spacebar");
+	if (spaceBar) {
+		spaceBar.querySelector(".key-mod-label").textContent = "";
+		spaceBar.classList.remove("key--spacebar-label");
+	}
+
+	// restore original characters
+	for (const [keyCode, keyEl] of keyElements) {
+		keyEl.classList.remove("key--has-composition", "key--no-composition", "key--dead-active");
+
+		const spans = keyEl.querySelectorAll(".key-char");
+		const layerOrder = [MOD_SHIFT, MOD_SHIFT_OPTION, MOD_BASE, MOD_OPTION];
+		for (let i = 0; i < spans.length; i++) {
+			const info = charForKey(currentData, layerOrder[i], keyCode);
+			spans[i].textContent = info ? displayChar(info.char) : "";
+		}
+	}
 }
 
 function showError(msg) {
@@ -243,10 +335,39 @@ function updateActiveLayer() {
 	}
 }
 
+function getActiveModIndex() {
+	const shift = activeModifiers.has("shift");
+	const option = activeModifiers.has("option");
+	if (shift && option) return MOD_SHIFT_OPTION;
+	if (shift) return MOD_SHIFT;
+	if (option) return MOD_OPTION;
+	return MOD_BASE;
+}
+
 document.addEventListener("keydown", (e) => {
 	if (e.key === "Shift") activeModifiers.add("shift");
 	if (e.key === "Alt") activeModifiers.add("option");
 	updateActiveLayer();
+
+	// detect dead key trigger from physical keyboard
+	if (currentData && !e.metaKey && !e.ctrlKey) {
+		const macCode = BROWSER_TO_MAC[e.keyCode];
+		if (macCode !== undefined) {
+			const modIdx = getActiveModIndex();
+			const keyMap = currentData.keyMaps[modIdx];
+			const keyData = keyMap?.keys[String(macCode)];
+			if (keyData?.deadKey) {
+				e.preventDefault();
+				toggleDeadKeyMode(keyData.deadKey);
+				return;
+			}
+		}
+	}
+
+	// Escape exits dead key mode
+	if (e.key === "Escape" && currentDeadKey) {
+		exitDeadKeyMode();
+	}
 });
 
 document.addEventListener("keyup", (e) => {
@@ -279,8 +400,8 @@ function initTabs() {
 			tabs.forEach(t => t.classList.remove("active"));
 			tab.classList.add("active");
 			currentVersion = version;
+			currentDeadKey = null;
 
-			document.getElementById("dead-key-panel").hidden = true;
 			updatePdfLink();
 
 			try {
@@ -295,10 +416,6 @@ function initTabs() {
 }
 
 /* --- Init --- */
-
-document.getElementById("dead-key-close").addEventListener("click", () => {
-	document.getElementById("dead-key-panel").hidden = true;
-});
 
 initTabs();
 loadVersion(currentVersion).then(data => {
