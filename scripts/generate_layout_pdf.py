@@ -54,7 +54,7 @@ KEYBOARD_ROWS = [
 	],
 	# Row 3: Bottom row
 	[
-		(None, 1.25, "Shift"), (93, 1.0, "§"), (6, 1.0, "Z"), (7, 1.0, "X"),
+		(None, 1.25, "Shift"), (50, 1.0, "`"), (6, 1.0, "Z"), (7, 1.0, "X"),
 		(8, 1.0, "C"), (9, 1.0, "V"), (11, 1.0, "B"), (45, 1.0, "N"),
 		(46, 1.0, "M"), (43, 1.0, ","), (47, 1.0, "."), (44, 1.0, "/"),
 		(None, 2.75, "Shift"),
@@ -352,7 +352,7 @@ def generate_pdf(version, output_dir):
 		return False
 
 	print(f"Generating PDF for EurKEY {version}...")
-	data = parse_keylayout(str(keylayout))
+	data = parse_keylayout(str(keylayout), keyboard_type=0)
 
 	pdf = LayoutPDF(f"EurKEY {version}")
 	pdf.generate(data)

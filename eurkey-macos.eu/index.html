@@ -17,8 +17,8 @@
 				<span>EurKEY</span>
 			</a>
 			<div class="nav-links">
-				<a href="#features">Features</a>
 				<a href="#layout">Layout</a>
+				<a href="#features">Features</a>
 				<a href="#install">Install</a>
 				<a href="https://github.com/felixfoertsch/EurKEY-macOS" class="nav-github" aria-label="GitHub">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -35,6 +35,34 @@
 		<h1>The European Keyboard Layout for macOS</h1>
 		<p class="hero-sub">Dead keys for diacritics. ISO international layout. Designed for MacBook keyboards.</p>
 		<a href="https://github.com/felixfoertsch/EurKEY-macOS/releases" class="btn">Download on GitHub</a>
+	</section>
+
+	<!-- LAYOUT PREVIEW -->
+	<section id="layout" class="layout-preview">
+		<div class="container">
+			<h2>Layout Preview</h2>
+			<p class="section-sub">The complete key map for each version, showing all modifier layers and dead key compositions.</p>
+			<div class="layout-controls">
+				<div class="version-tabs">
+					<button class="version-tab active" data-version="v2.0">v2.0</button>
+					<button class="version-tab" data-version="v1.4">v1.4</button>
+					<button class="version-tab" data-version="v1.3">v1.3</button>
+					<button class="version-tab" data-version="v1.2">v1.2</button>
+				</div>
+			</div>
+			<figure class="keyboard" id="keyboard"></figure>
+			<div class="dead-key-panel" id="dead-key-panel" hidden>
+				<button class="dead-key-close" id="dead-key-close" aria-label="Close">&times;</button>
+				<h4 id="dead-key-title"></h4>
+				<div class="dead-key-grid" id="dead-key-grid"></div>
+			</div>
+			<div class="layout-pdf-links">
+				<a href="pdf/eurkey-v1.3-layout.pdf">v1.3 PDF</a>
+				<a href="pdf/eurkey-v1.2-layout.pdf">v1.2 PDF</a>
+				<a href="pdf/eurkey-v1.4-layout.pdf">v1.4 PDF</a>
+				<a href="pdf/eurkey-v2.0-layout.pdf">v2.0 PDF</a>
+			</div>
+		</div>
 	</section>
 
 	<!-- FEATURES -->
@@ -62,20 +90,6 @@
 					<h3>Easy Install</h3>
 					<p>Download the DMG, drag the bundle to Keyboard Layouts, log out. Done in under a minute.</p>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- LAYOUT PREVIEW -->
-	<section id="layout" class="layout-preview">
-		<div class="container">
-			<h2>Layout Preview</h2>
-			<p class="section-sub">The complete key map for each version, showing all modifier layers and dead key compositions.</p>
-			<div class="layout-downloads">
-				<a href="pdf/eurkey-v1.3-layout.pdf" class="layout-link">v1.3 <span>PDF</span></a>
-				<a href="pdf/eurkey-v1.2-layout.pdf" class="layout-link">v1.2 <span>PDF</span></a>
-				<a href="pdf/eurkey-v1.4-layout.pdf" class="layout-link">v1.4 <span>PDF</span></a>
-				<a href="pdf/eurkey-v2.0-layout.pdf" class="layout-link">v2.0 <span>PDF</span></a>
 			</div>
 		</div>
 	</section>
@@ -136,5 +150,6 @@
 		</div>
 	</footer>
 
+	<script src="keyboard.js"></script>
 </body>
 </html>

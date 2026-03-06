@@ -4,6 +4,10 @@ __pycache__/
 build/
 *.dmg
 
+# Generated site assets
+eurkey-macos.eu/data/
+eurkey-macos.eu/pdf/
+
 # macOS
 .DS_Store
 .AppleDouble

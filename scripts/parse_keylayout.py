@@ -128,8 +128,13 @@ def _restore_control_chars(text):
 	return re.sub(r'__CTRL_U([0-9A-F]{4})__', restore, text)
 
 
-def parse_keylayout(filepath):
-	"""Parse a .keylayout XML file and return a structured dict."""
+def parse_keylayout(filepath, keyboard_type=0):
+	"""Parse a .keylayout XML file and return a structured dict.
+
+	keyboard_type selects which mapSet to use. Each <layout> element
+	covers a range of hardware keyboard types (first..last). The mapSet
+	matching the requested type is used. Default 0 = MacBook built-in.
+	"""
 	xml_content = _read_keylayout_xml(filepath)
 	root = ET.fromstring(xml_content)
 
@@ -160,32 +165,25 @@ def parse_keylayout(filepath):
 		terminators[state] = output
 	result["terminators"] = terminators
 
-	# resolve layouts
-	layouts = root.findall(".//layout")
+	# find the mapSet for the requested keyboard type
+	target_map_set = None
+	for layout in root.findall(".//layout"):
+		first = int(layout.get("first", "0"))
+		last = int(layout.get("last", "0"))
+		if first <= keyboard_type <= last:
+			target_map_set = layout.get("mapSet")
+			break
 
-	# build resolved key maps from all layout entries
-	# first pass: load ALL keys from each keyMapSet (base definitions)
-	# second pass: override with keys from layout entries that specify ranges
+	if target_map_set is None:
+		# fall back to first layout entry
+		first_layout = root.find(".//layout")
+		target_map_set = first_layout.get("mapSet") if first_layout is not None else None
+
+	# resolve keys from the selected mapSet
 	resolved = {}
-	seen_map_sets = set()
-	for layout in layouts:
-		map_set_id = layout.get("mapSet")
-		first_code = int(layout.get("first", "0"))
-		last_code = int(layout.get("last", "0"))
-		kms = key_map_sets.get(map_set_id, {})
-
-		for idx_str, keys in kms.items():
-			if idx_str not in resolved:
-				resolved[idx_str] = {}
-			for code_str, entry in keys.items():
-				code = int(code_str)
-				if map_set_id not in seen_map_sets:
-					# first time seeing this mapSet: include all keys
-					resolved[idx_str][code_str] = entry
-				elif first_code <= code <= last_code:
-					# subsequent layout with same mapSet: only override in range
-					resolved[idx_str][code_str] = entry
-		seen_map_sets.add(map_set_id)
+	kms = key_map_sets.get(target_map_set, {})
+	for idx_str, keys in kms.items():
+		resolved[idx_str] = dict(keys)
 
 	# build the final keyMaps output
 	key_maps = {}
@@ -341,9 +339,11 @@ def main():
 	parser.add_argument("--output", "-o", help="Output JSON file path")
 	parser.add_argument("--summary", "-s", action="store_true",
 		help="Print human-readable summary")
+	parser.add_argument("--keyboard-type", "-k", type=int, default=0,
+		help="Hardware keyboard type ID (default: 0 = MacBook built-in)")
 	args = parser.parse_args()
 
-	data = parse_keylayout(args.keylayout)
+	data = parse_keylayout(args.keylayout, keyboard_type=args.keyboard_type)
 
 	if args.summary:
 		print_summary(data)
