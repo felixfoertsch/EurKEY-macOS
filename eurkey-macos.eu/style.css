@@ -93,40 +93,19 @@ img {
 	text-decoration: none;
 }
 
+.nav-links .btn--nav {
+	color: #fff;
+}
+
+.nav-links .btn--nav:hover {
+	color: #fff;
+}
+
 .nav-github {
 	display: flex;
 	align-items: center;
 }
 
-/* Hero */
-.hero {
-	text-align: center;
-	padding: 5rem 1.5rem 4rem;
-	background: linear-gradient(180deg, #f0f4ff 0%, #fff 100%);
-}
-
-.hero-icon {
-	border-radius: 20px;
-	margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-	font-size: 2.5rem;
-	font-weight: 800;
-	letter-spacing: -0.02em;
-	line-height: 1.15;
-	margin-bottom: 1rem;
-	max-width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.hero-sub {
-	font-size: 1.15rem;
-	color: #5a6178;
-	max-width: 480px;
-	margin: 0 auto 2rem;
-}
 
 .btn {
 	display: inline-block;
@@ -143,6 +122,24 @@ img {
 .btn:hover {
 	background: #002266;
 	text-decoration: none;
+}
+
+.btn--nav {
+	padding: 0.4rem 1rem;
+	font-size: 0.85rem;
+	border-radius: 6px;
+	color: #fff;
+}
+
+.btn--secondary {
+	background: #fff;
+	color: #003399;
+	border: 1px solid #003399;
+}
+
+.btn--secondary:hover {
+	background: #f0f4ff;
+	color: #002266;
 }
 
 /* Features */
@@ -650,14 +647,6 @@ img {
 }
 
 @media (max-width: 768px) {
-	.hero h1 {
-		font-size: 1.75rem;
-	}
-
-	.hero-sub {
-		font-size: 1rem;
-	}
-
 	.feature-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -667,14 +656,6 @@ img {
 @media (max-width: 480px) {
 	.nav-links a:not(.nav-github) {
 		display: none;
-	}
-
-	.hero {
-		padding: 3rem 1.5rem 2.5rem;
-	}
-
-	.hero h1 {
-		font-size: 1.5rem;
 	}
 
 	.feature-grid {

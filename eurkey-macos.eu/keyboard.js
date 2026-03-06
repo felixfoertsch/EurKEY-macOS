@@ -262,6 +262,13 @@ window.addEventListener("blur", () => {
 
 /* --- Version tabs --- */
 
+function updatePdfLink() {
+	const link = document.getElementById("pdf-download");
+	if (!link) return;
+	link.href = "pdf/eurkey-" + currentVersion + "-layout.pdf";
+	link.textContent = "Download " + currentVersion + " PDF";
+}
+
 function initTabs() {
 	const tabs = document.querySelectorAll(".version-tab");
 	tabs.forEach(tab => {
@@ -274,6 +281,7 @@ function initTabs() {
 			currentVersion = version;
 
 			document.getElementById("dead-key-panel").hidden = true;
+			updatePdfLink();
 
 			try {
 				currentData = await loadVersion(version);
