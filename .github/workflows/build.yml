@@ -20,11 +20,19 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: validate layouts
-        run: python3 scripts/validate_layouts.py
+      - name: setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: install Python dependencies
+        run: pip install fpdf2
 
       - name: build bundle
         run: bash scripts/build-bundle.sh
+
+      - name: validate layouts
+        run: python3 scripts/validate_layouts.py
 
       - name: create DMG
         run: bash scripts/create-dmg.sh
