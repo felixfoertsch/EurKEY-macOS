@@ -32,6 +32,9 @@ echo "Building ${BUNDLE_NAME} ${VERSION}"
 echo "Bundle: ${BUNDLE_DIR}"
 echo
 
+# --- generate icons from SVG sources ---
+bash "${SCRIPT_DIR}/build-icons.sh"
+
 # --- assemble bundle from src/ ---
 rm -rf "${BUNDLE_DIR}"
 mkdir -p "${RESOURCES_DIR}"

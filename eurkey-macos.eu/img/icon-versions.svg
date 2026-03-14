@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+	<!-- Stacked key caps representing multiple versions -->
+	<!-- Back card -->
+	<rect x="12" y="6" width="28" height="20" rx="3" stroke="#003399" stroke-width="2" fill="none" opacity="0.3"/>
+	<!-- Middle card -->
+	<rect x="8" y="12" width="28" height="20" rx="3" stroke="#003399" stroke-width="2" fill="none" opacity="0.6"/>
+	<!-- Front card -->
+	<rect x="4" y="18" width="28" height="20" rx="3" stroke="#003399" stroke-width="2.5" fill="none"/>
+	<!-- Version label on front card -->
+	<text x="18" y="32" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="10" font-weight="700" fill="#003399">2.0</text>
+	<!-- Checkmark on front card -->
+	<path d="M32 42 L36 46 L44 36" stroke="#003399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

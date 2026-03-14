@@ -13,7 +13,7 @@ The bundle ships 4 layout versions:
 | Version | Description |
 | ------- | ----------- |
 | **v1.3** | Official EurKEY spec implementation. **Recommended for most users.** |
-| **v1.2** | Legacy version based on [Leonardo Schenkel's port](https://github.com/lbschenkel/EurKEY-Mac). Predates the v1.3 spec (no `¬` dead key, `§` instead of `ẞ` on Shift+Option+S). |
+| **v1.2** | Legacy version based on [Leonardo Schenkel's port](https://github.com/lbschenkel/EurKEY-Mac). Predates the v1.3 spec (no `¬` dead key, `§` instead of `ẞ` on Option+Shift+S). |
 | **v1.4** | v1.3 with `ẞ` (capital sharp s) on Caps+`§` key. |
 | **v2.0** | Custom edition — complete rework. Every key configures exactly as printed on the MacBook keyboard. Removes left/right modifier key distinction. New monochrome template icon. |
 
@@ -54,7 +54,7 @@ python3 scripts/parse_keylayout.py "EurKey-macOS.bundle/Contents/Resources/EurKE
 bash scripts/build-bundle.sh
 
 # create a DMG installer
-bash scripts/create-dmg.sh
+bash scripts/build-dmg.sh
 ```
 
 ## Dead key compositions (v2.0)

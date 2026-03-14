@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+	<!-- Document with folded corner -->
+	<path d="M10 4 H30 L38 12 V42 Q38 44 36 44 H12 Q10 44 10 42 Z" stroke="#003399" stroke-width="2.5" fill="none"/>
+	<!-- Folded corner -->
+	<path d="M30 4 V12 H38" stroke="#003399" stroke-width="2" fill="none" stroke-linejoin="round"/>
+	<!-- Keyboard diagram lines on the document -->
+	<line x1="16" y1="22" x2="32" y2="22" stroke="#003399" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+	<line x1="16" y1="27" x2="32" y2="27" stroke="#003399" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+	<line x1="16" y1="32" x2="28" y2="32" stroke="#003399" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+	<!-- PDF label -->
+	<text x="24" y="40" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="7" font-weight="700" fill="#003399">PDF</text>
+</svg>

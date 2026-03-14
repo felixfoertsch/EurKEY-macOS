@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+	<!-- Template badge: rounded square nearly filling the canvas.
+	     Matches Apple's built-in keyboard layout icon style (ABC, DE, etc.). -->
+	<defs>
+		<mask id="textmask">
+			<rect width="1024" height="1024" fill="white"/>
+			<text x="512" y="700" text-anchor="middle"
+				font-family="Helvetica, Arial, sans-serif"
+				font-size="640" font-weight="bold"
+				fill="black">EU</text>
+		</mask>
+	</defs>
+	<rect x="0" y="0" width="1024" height="1024" rx="220" fill="black" mask="url(#textmask)"/>
+</svg>

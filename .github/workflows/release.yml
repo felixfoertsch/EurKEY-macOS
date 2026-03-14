@@ -26,7 +26,7 @@ jobs:
         run: bash scripts/build-bundle.sh --version "${{ steps.version.outputs.version }}"
 
       - name: create DMG
-        run: bash scripts/create-dmg.sh --version "${{ steps.version.outputs.version }}"
+        run: bash scripts/build-dmg.sh --version "${{ steps.version.outputs.version }}"
 
       - name: create GitHub release
         uses: softprops/action-gh-release@v2

@@ -35,11 +35,11 @@ const KEYBOARD_ROWS = [
 const MOD_BASE = "0";
 const MOD_SHIFT = "1";
 const MOD_OPTION = "3";
-const MOD_SHIFT_OPTION = "4";
+const MOD_OPTION_SHIFT = "4";
 
 const LAYERS = [
 	{ mod: MOD_SHIFT, cls: "key-char--shift" },
-	{ mod: MOD_SHIFT_OPTION, cls: "key-char--shift-option" },
+	{ mod: MOD_OPTION_SHIFT, cls: "key-char--option-shift" },
 	{ mod: MOD_BASE, cls: "key-char--base" },
 	{ mod: MOD_OPTION, cls: "key-char--option" },
 ];
@@ -261,7 +261,7 @@ function enterDeadKeyMode(deadState) {
 		const shiftComposed = charMap[shiftChar] || "";
 
 		const spans = keyEl.querySelectorAll(".key-char");
-		// order: shift, shift-option, base, option
+		// order: shift, option-shift, base, option
 		if (spans[0]) spans[0].textContent = displayChar(shiftComposed);
 		if (spans[1]) spans[1].textContent = "";
 		if (spans[2]) spans[2].textContent = displayChar(baseComposed);
@@ -298,7 +298,7 @@ function exitDeadKeyMode() {
 		keyEl.classList.remove("key--has-composition", "key--no-composition", "key--dead-active");
 
 		const spans = keyEl.querySelectorAll(".key-char");
-		const layerOrder = [MOD_SHIFT, MOD_SHIFT_OPTION, MOD_BASE, MOD_OPTION];
+		const layerOrder = [MOD_SHIFT, MOD_OPTION_SHIFT, MOD_BASE, MOD_OPTION];
 		for (let i = 0; i < spans.length; i++) {
 			const info = charForKey(currentData, layerOrder[i], keyCode);
 			spans[i].textContent = info ? displayChar(info.char) : "";
@@ -324,7 +324,7 @@ function updateActiveLayer() {
 	const shift = activeModifiers.has("shift");
 	const option = activeModifiers.has("option");
 	let layer = null;
-	if (shift && option) layer = "shift-option";
+	if (shift && option) layer = "option-shift";
 	else if (shift) layer = "shift";
 	else if (option) layer = "option";
 
@@ -338,7 +338,7 @@ function updateActiveLayer() {
 function getActiveModIndex() {
 	const shift = activeModifiers.has("shift");
 	const option = activeModifiers.has("option");
-	if (shift && option) return MOD_SHIFT_OPTION;
+	if (shift && option) return MOD_OPTION_SHIFT;
 	if (shift) return MOD_SHIFT;
 	if (option) return MOD_OPTION;
 	return MOD_BASE;

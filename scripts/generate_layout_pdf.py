@@ -2,7 +2,7 @@
 """Generate keyboard layout PDFs from .keylayout files.
 
 Renders an ISO keyboard diagram showing Base, Shift, Option, and
-Shift+Option layers on each key, plus dead key composition tables.
+Option+Shift layers on each key, plus dead key composition tables.
 
 Requires: fpdf2 (pip install fpdf2)
 
@@ -72,12 +72,12 @@ KEYBOARD_ROWS = [
 MOD_BASE = "0"
 MOD_SHIFT = "1"
 MOD_OPTION = "3"
-MOD_SHIFT_OPTION = "4"
+MOD_OPTION_SHIFT = "4"
 
 # Display layers: (modifier_index, color_rgb, position)
 DISPLAY_LAYERS = [
 	(MOD_SHIFT, (0, 40, 170), "top_left"),
-	(MOD_SHIFT_OPTION, (120, 0, 120), "top_right"),
+	(MOD_OPTION_SHIFT, (120, 0, 120), "top_right"),
 	(MOD_BASE, (0, 0, 0), "bottom_left"),
 	(MOD_OPTION, (170, 0, 0), "bottom_right"),
 ]
@@ -202,7 +202,7 @@ class LayoutPDF(FPDF):
 			((0, 0, 0), "Base"),
 			((0, 40, 170), "Shift"),
 			((170, 0, 0), "Option"),
-			((120, 0, 120), "Shift+Option"),
+			((120, 0, 120), "Option+Shift"),
 		]
 		for color, label in items:
 			self._color(color)
@@ -316,7 +316,7 @@ class LayoutPDF(FPDF):
 		"""Find which key combo triggers a dead key state."""
 		mod_names = {
 			"0": "", "1": "⇧ ", "2": "⇪ ", "3": "⌥ ",
-			"4": "⇧⌥ ", "5": "⇪⌥ ",
+			"4": "⌥⇧ ", "5": "⇪⌥ ",
 		}
 		# map key codes to physical labels from KEYBOARD_ROWS
 		code_labels = {}

@@ -74,9 +74,9 @@ MODIFIER_LABELS = {
 	1: "Shift",
 	2: "Caps",
 	3: "Option",
-	4: "Shift+Option",
+	4: "Option+Shift",
 	5: "Caps+Option",
-	6: "Command+Option",
+	6: "Option+Command",
 	7: "Control",
 }
 

@@ -951,7 +951,8 @@
 				"24": {
 					"code": 24,
 					"keyName": "=",
-					"output": "^"
+					"action": "a27",
+					"output": "="
 				},
 				"25": {
 					"code": 25,
@@ -986,7 +987,8 @@
 				"30": {
 					"code": 30,
 					"keyName": "]",
-					"output": "["
+					"action": "a57",
+					"output": "]"
 				},
 				"31": {
 					"code": 31,
@@ -1003,7 +1005,8 @@
 				"33": {
 					"code": 33,
 					"keyName": "[",
-					"output": "@"
+					"action": "a56",
+					"output": "["
 				},
 				"34": {
 					"code": 34,
@@ -1037,7 +1040,8 @@
 				"39": {
 					"code": 39,
 					"keyName": "'",
-					"output": ":"
+					"action": "a6",
+					"output": "'"
 				},
 				"40": {
 					"code": 40,
@@ -1054,7 +1058,7 @@
 				"42": {
 					"code": 42,
 					"keyName": "\\",
-					"output": "]"
+					"output": "\\"
 				},
 				"43": {
 					"code": 43,
@@ -1240,21 +1244,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "¥"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "_"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -1288,8 +1277,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -1299,8 +1287,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -1533,7 +1520,8 @@
 				"19": {
 					"code": 19,
 					"keyName": "2",
-					"output": "\""
+					"action": "a29",
+					"output": "@"
 				},
 				"20": {
 					"code": 20,
@@ -1550,7 +1538,8 @@
 				"22": {
 					"code": 22,
 					"keyName": "6",
-					"output": "&"
+					"action": "a58",
+					"output": "^"
 				},
 				"23": {
 					"code": 23,
@@ -1561,37 +1550,44 @@
 				"24": {
 					"code": 24,
 					"keyName": "=",
-					"output": "~"
+					"action": "a10",
+					"output": "+"
 				},
 				"25": {
 					"code": 25,
 					"keyName": "9",
-					"output": ")"
+					"action": "a7",
+					"output": "("
 				},
 				"26": {
 					"code": 26,
 					"keyName": "7",
-					"output": "'"
+					"action": "a5",
+					"output": "&"
 				},
 				"27": {
 					"code": 27,
 					"keyName": "-",
-					"output": "="
+					"action": "a59",
+					"output": "_"
 				},
 				"28": {
 					"code": 28,
 					"keyName": "8",
-					"output": "("
+					"action": "a9",
+					"output": "*"
 				},
 				"29": {
 					"code": 29,
 					"keyName": "0",
-					"output": "0"
+					"action": "a8",
+					"output": ")"
 				},
 				"30": {
 					"code": 30,
 					"keyName": "]",
-					"output": "{"
+					"action": "a90",
+					"output": "}"
 				},
 				"31": {
 					"code": 31,
@@ -1608,7 +1604,8 @@
 				"33": {
 					"code": 33,
 					"keyName": "[",
-					"output": "`"
+					"action": "a88",
+					"output": "{"
 				},
 				"34": {
 					"code": 34,
@@ -1642,7 +1639,8 @@
 				"39": {
 					"code": 39,
 					"keyName": "'",
-					"output": "*"
+					"action": "a1",
+					"output": "\""
 				},
 				"40": {
 					"code": 40,
@@ -1653,12 +1651,14 @@
 				"41": {
 					"code": 41,
 					"keyName": ";",
-					"output": "+"
+					"action": "a24",
+					"output": ":"
 				},
 				"42": {
 					"code": 42,
 					"keyName": "\\",
-					"output": "}"
+					"action": "a89",
+					"output": "|"
 				},
 				"43": {
 					"code": 43,
@@ -1846,21 +1846,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "|"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "_"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -1894,8 +1879,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -1905,8 +1889,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -2169,7 +2152,8 @@
 				"24": {
 					"code": 24,
 					"keyName": "=",
-					"output": "^"
+					"action": "a27",
+					"output": "="
 				},
 				"25": {
 					"code": 25,
@@ -2204,7 +2188,7 @@
 				"30": {
 					"code": 30,
 					"keyName": "]",
-					"output": "["
+					"output": "]"
 				},
 				"31": {
 					"code": 31,
@@ -2221,7 +2205,7 @@
 				"33": {
 					"code": 33,
 					"keyName": "[",
-					"output": "@"
+					"output": "["
 				},
 				"34": {
 					"code": 34,
@@ -2255,7 +2239,7 @@
 				"39": {
 					"code": 39,
 					"keyName": "'",
-					"output": ":"
+					"output": "'"
 				},
 				"40": {
 					"code": 40,
@@ -2271,7 +2255,7 @@
 				"42": {
 					"code": 42,
 					"keyName": "\\",
-					"output": "]"
+					"output": "\\"
 				},
 				"43": {
 					"code": 43,
@@ -2456,21 +2440,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "¥"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "_"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -2504,8 +2473,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -2515,8 +2483,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -3041,22 +3008,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "\\"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"action": "a60",
-					"deadKey": "3"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -3090,8 +3041,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -3101,8 +3051,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -3217,7 +3166,7 @@
 			}
 		},
 		"4": {
-			"label": "Shift+Option",
+			"label": "Option+Shift",
 			"keys": {
 				"0": {
 					"code": 0,
@@ -3626,21 +3575,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "|"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "`"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -3674,8 +3608,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -3685,8 +3618,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -4201,21 +4133,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "\\"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "`"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -4249,8 +4166,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -4260,8 +4176,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -4376,7 +4291,7 @@
 			}
 		},
 		"6": {
-			"label": "Command+Option",
+			"label": "Option+Command",
 			"keys": {
 				"0": {
 					"code": 0,
@@ -4773,21 +4688,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "\\"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "_"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -4821,8 +4721,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -4832,8 +4731,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,
@@ -5347,21 +5245,6 @@
 					"keyName": "KP9",
 					"output": "9"
 				},
-				"93": {
-					"code": 93,
-					"keyName": "ISO§",
-					"output": "|"
-				},
-				"94": {
-					"code": 94,
-					"keyName": "ISO_backslash",
-					"output": "_"
-				},
-				"95": {
-					"code": 95,
-					"keyName": "ISO_comma",
-					"output": ","
-				},
 				"96": {
 					"code": 96,
 					"keyName": "F5",
@@ -5395,8 +5278,7 @@
 				"102": {
 					"code": 102,
 					"keyName": "code102",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"103": {
 					"code": 103,
@@ -5406,8 +5288,7 @@
 				"104": {
 					"code": 104,
 					"keyName": "code104",
-					"action": "a80",
-					"output": " "
+					"output": "\u0010"
 				},
 				"105": {
 					"code": 105,

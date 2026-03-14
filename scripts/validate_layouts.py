@@ -21,7 +21,7 @@ from parse_keylayout import parse_keylayout, TYPING_KEY_CODES, MODIFIER_LABELS, 
 BUNDLE_DIR = Path(__file__).parent.parent / "build" / "EurKey-macOS.bundle" / "Contents" / "Resources"
 
 # modifier indices that contain meaningful typing output
-# (exclude index 6 = Command+Option and 7 = Control — these are system shortcuts)
+# (exclude index 6 = Option+Command and 7 = Control — these are system shortcuts)
 VALIDATED_MODIFIER_INDICES = {"0", "1", "2", "3", "4", "5"}
 
 
@@ -182,14 +182,14 @@ def format_char_display(c):
 
 # v1.2 predates v1.3 — known differences documented here
 V1_2_EXCEPTIONS = {
-	# Shift+Option S: v1.2 has § where v1.3 has ẞ (capital sharp s)
+	# Option+Shift S: v1.2 has § where v1.3 has ẞ (capital sharp s)
 	"4:1": {"output": "§"},
 	# v1.2 does not have the ¬ (negation) dead key — added in v1.3
 	# instead, Option+- has the © dead key, and Option+\ outputs plain ¬
 	"_dead_key_skip": ["dead: ¬"],
 	"3:27": {"deadKey": "dead: ©"},   # Option+-: © dead key instead of ¬ dead key
 	"3:42": {"output": "¬"},          # Option+\: plain ¬ instead of ¬ dead key
-	"4:27": {"output": "№"},          # Shift+Option+-: № instead of ✗
+	"4:27": {"output": "№"},          # Option+Shift+-: № instead of ✗
 	"5:27": {"deadKey": "dead: ©"},   # Caps+Option+-: © dead key instead of ¬ dead key
 }
 

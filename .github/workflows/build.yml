@@ -35,7 +35,7 @@ jobs:
         run: python3 scripts/validate_layouts.py
 
       - name: create DMG
-        run: bash scripts/create-dmg.sh
+        run: bash scripts/build-dmg.sh
 
       - name: upload DMG
         uses: actions/upload-artifact@v4

@@ -26,11 +26,8 @@ STAGING_DIR="${BUILD_DIR}/dmg-staging"
 
 echo "Creating DMG: ${DMG_NAME}"
 
-# --- auto-build bundle if missing ---
-if [[ ! -f "${BUNDLE_DIR}/Contents/Info.plist" ]]; then
-	echo "Bundle not found, building..."
-	bash "${SCRIPT_DIR}/build-bundle.sh" --version "${VERSION}"
-fi
+# --- build bundle (includes validation) ---
+bash "${SCRIPT_DIR}/build-bundle.sh" --version "${VERSION}"
 
 # --- auto-build PDFs ---
 echo "Building PDFs..."

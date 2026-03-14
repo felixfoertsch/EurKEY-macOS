@@ -308,7 +308,7 @@ img {
 	color: #0028aa;
 }
 
-.key-char--shift-option {
+.key-char--option-shift {
 	justify-content: flex-end;
 	color: #780078;
 }
@@ -427,7 +427,7 @@ img {
 
 .keyboard[data-active-layer="shift"] .key-char--shift,
 .keyboard[data-active-layer="option"] .key-char--option,
-.keyboard[data-active-layer="shift-option"] .key-char--shift-option {
+.keyboard[data-active-layer="option-shift"] .key-char--option-shift {
 	opacity: 1;
 	font-weight: 700;
 	font-size: 15px;
@@ -436,8 +436,8 @@ img {
 /* Pressed modifier key visual */
 .keyboard[data-active-layer="shift"] .key--mod[data-mod="shift"],
 .keyboard[data-active-layer="option"] .key--mod[data-mod="option"],
-.keyboard[data-active-layer="shift-option"] .key--mod[data-mod="shift"],
-.keyboard[data-active-layer="shift-option"] .key--mod[data-mod="option"] {
+.keyboard[data-active-layer="option-shift"] .key--mod[data-mod="shift"],
+.keyboard[data-active-layer="option-shift"] .key--mod[data-mod="option"] {
 	transform: translateY(1px);
 	background: linear-gradient(to bottom, #d4d4d4, #ccc);
 	box-shadow:
@@ -454,7 +454,7 @@ img {
 	background: linear-gradient(to bottom, #fef9e7, #fef3cd 95%, #f5e6a8);
 }
 
-.keyboard--dead-mode .key--has-composition .key-char--shift-option,
+.keyboard--dead-mode .key--has-composition .key-char--option-shift,
 .keyboard--dead-mode .key--has-composition .key-char--option {
 	visibility: hidden;
 }
