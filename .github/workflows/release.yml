@@ -15,15 +15,23 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - name: setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: install Python dependencies
+        run: pip install fpdf2
+
       - name: extract version from tag
         id: version
         run: echo "version=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
 
-      - name: validate layouts
-        run: python3 scripts/validate_layouts.py
-
       - name: build bundle
         run: bash scripts/build-bundle.sh --version "${{ steps.version.outputs.version }}"
+
+      - name: validate layouts
+        run: python3 scripts/validate_layouts.py
 
       - name: create DMG
         run: bash scripts/build-dmg.sh --version "${{ steps.version.outputs.version }}"
@@ -34,6 +42,18 @@ jobs:
           name: EurKEY-macOS ${{ steps.version.outputs.version }}
           files: build/EurKEY-macOS-${{ steps.version.outputs.version }}.dmg
           body: |
+            ## Changes
+
+            - Fix modifier key order to Apple canonical: Option+Shift (not Shift+Option)
+            - Add EU badge template icons for v1.2, v1.3, v1.4 matching Apple's built-in style
+            - Add icon build pipeline from SVG source
+            - Add interactive keyboard viewer to website
+            - Add layout PDF downloads to website
+            - Replace Hugo with lightweight static website
+            - Fix Greek dead key terminator (Ω → α) to match official spec
+            - Enable CapsLock language switch for all layouts
+            - Rename create-dmg.sh → build-dmg.sh
+
             ## Installation
 
             1. Download `EurKEY-macOS-${{ steps.version.outputs.version }}.dmg`
