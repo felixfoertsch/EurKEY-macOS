@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-	<!-- Template icon: "EU" — transparent bg, black text
-	     macOS TISIconIsTemplate renders this adaptively:
-	     light mode: dark text, light pill background
-	     dark mode: light text, dark pill background -->
-	<text x="512" y="700" text-anchor="middle" font-family="'SF Pro Text', '.AppleSystemUIFont', 'Helvetica Neue', sans-serif" font-size="620" font-weight="600" fill="#000" letter-spacing="-10">EU</text>
-</svg>

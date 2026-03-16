@@ -508,7 +508,7 @@
             <key code="7" output="Á"/>
             <key code="8" output="Ç"/>
             <key code="9" output="Ì"/>
-            <key code="10" output="±"/>
+            <key code="10" output=""/>
             <key code="11" output="Í"/>
             <key code="12" action="Æ"/>
             <key code="13" output="Å"/>
@@ -1093,7 +1093,6 @@
         <action id="-">
             <when state="none" output="-"/>
             <when state="⌥m" output="⁻"/>
-            <when state="⌥⇧m" output="±"/>
         </action>
         <action id=".">
             <when state="none" output="."/>
@@ -1132,10 +1131,6 @@
         <action id="5">
             <when state="none" output="5"/>
             <when state="⌥\" output="⅔"/>
-            <when state="⌥⇧7" output="¯"/>
-            <when state="⌥'" output="´"/>
-            <when state="⌥⇧6" output="ˇ"/>
-            <when state="⌥7" output="˚"/>
             <when state="⌥m" output="₅"/>
         </action>
         <action id="6">
@@ -1584,7 +1579,6 @@
         <action id="s">
             <when state="none" output="s"/>
             <when state="⌥6" output="ŝ"/>
-            <when state="⌥\" output="§"/>
             <when state="⌥'" output="ś"/>
             <when state="⌥⇧6" output="š"/>
             <when state="⌥m" output="σ"/>
@@ -1775,6 +1769,6 @@
         <when state="⌥⇧6" output="ˇ"/>
         <when state="⌥7" output="˚"/>
         <when state="⌥m" output="α"/>
-        <when state="⌥⇧m" output=" "/>
+        <when state="⌥⇧m" output="𝕄"/>
     </terminators>
 </keyboard>

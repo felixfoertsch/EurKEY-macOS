@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+	<!-- ISO Enter key shape (inverted L) -->
+	<path d="M18 6 H38 Q42 6 42 10 V38 Q42 42 38 42 H26 Q22 42 22 38 V22 H10 Q6 22 6 18 V10 Q6 6 10 6 Z" stroke="#003399" stroke-width="2.5" fill="none"/>
+	<!-- Enter arrow -->
+	<path d="M36 18 V30 H28" stroke="#003399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M31 27 L28 30 L31 33" stroke="#003399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

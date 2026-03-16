@@ -63,7 +63,7 @@ const DEAD_KEY_NAMES = {
 	"\u00af": "The Macrons", "\u02da": "The Rings & Dots",
 	"\u03b1": "The Greeks", "\u221a": "The Mathematicians",
 	"\u00ac": "The Navigators", "\u00a9": "The Navigators",
-	" ": "The Mathematicians",
+	"\uD835\uDD44": "The Mathematicians",
 };
 
 const cache = new Map();
@@ -186,8 +186,7 @@ function renderKeyboard(data) {
 			} else {
 				keyElements.set(keyCode, keyEl);
 
-				let hasDead = false;
-				let deadState = null;
+				const deadStates = [];
 
 				for (const layer of LAYERS) {
 					const info = charForKey(data, layer.mod, keyCode);
@@ -196,18 +195,19 @@ function renderKeyboard(data) {
 					if (info) {
 						span.textContent = displayChar(info.char);
 						if (info.deadKey) {
-							hasDead = true;
-							deadState = info.deadKey;
+							if (!deadStates.includes(info.deadKey)) deadStates.push(info.deadKey);
 							span.classList.add("key-char--is-dead");
 						}
 					}
 					keyEl.appendChild(span);
 				}
 
-				if (hasDead) {
+				if (deadStates.length > 0) {
+					deadStates.reverse();
 					keyEl.classList.add("key--dead");
-					keyEl.dataset.deadKey = deadState;
-					keyEl.addEventListener("click", () => toggleDeadKeyMode(deadState));
+					keyEl.dataset.deadKey = deadStates[0];
+					keyEl.dataset.deadKeys = JSON.stringify(deadStates);
+					keyEl.addEventListener("click", () => cycleDeadKeyMode(keyEl));
 				}
 			}
 
@@ -225,6 +225,23 @@ function toggleDeadKeyMode(deadState) {
 		exitDeadKeyMode();
 	} else {
 		enterDeadKeyMode(deadState);
+	}
+}
+
+function cycleDeadKeyMode(keyEl) {
+	const deadStates = JSON.parse(keyEl.dataset.deadKeys || "[]");
+	if (deadStates.length === 0) return;
+
+	if (!currentDeadKey || !deadStates.includes(currentDeadKey)) {
+		enterDeadKeyMode(deadStates[0]);
+	} else {
+		const idx = deadStates.indexOf(currentDeadKey);
+		const next = idx + 1;
+		if (next < deadStates.length) {
+			enterDeadKeyMode(deadStates[next]);
+		} else {
+			exitDeadKeyMode();
+		}
 	}
 }
 
@@ -260,21 +277,35 @@ function enterDeadKeyMode(deadState) {
 		const baseComposed = charMap[baseChar] || "";
 		const shiftComposed = charMap[shiftChar] || "";
 
-		const spans = keyEl.querySelectorAll(".key-char");
-		// order: shift, option-shift, base, option
-		if (spans[0]) spans[0].textContent = displayChar(shiftComposed);
-		if (spans[1]) spans[1].textContent = "";
-		if (spans[2]) spans[2].textContent = displayChar(baseComposed);
-		if (spans[3]) spans[3].textContent = "";
-
-		if (keyEl.dataset.deadKey === deadState) {
+		const allDead = JSON.parse(keyEl.dataset.deadKeys || "[]");
+		if (allDead.includes(deadState)) {
 			keyEl.classList.add("key--dead-active");
-		} else if (baseComposed || shiftComposed) {
-			keyEl.classList.add("key--has-composition");
-			keyEl.classList.remove("key--no-composition");
+			// only show the span for the layer that owns this dead key
+			const spans = keyEl.querySelectorAll(".key-char");
+			const layerOrder = [MOD_SHIFT, MOD_OPTION_SHIFT, MOD_BASE, MOD_OPTION];
+			for (let i = 0; i < spans.length; i++) {
+				const info = charForKey(currentData, layerOrder[i], keyCode);
+				if (info?.deadKey === deadState) {
+					spans[i].style.visibility = "visible";
+				} else {
+					spans[i].style.visibility = "hidden";
+				}
+			}
 		} else {
-			keyEl.classList.add("key--no-composition");
-			keyEl.classList.remove("key--has-composition");
+			const spans = keyEl.querySelectorAll(".key-char");
+			// order: shift, option-shift, base, option
+			if (spans[0]) spans[0].textContent = displayChar(shiftComposed);
+			if (spans[1]) spans[1].textContent = "";
+			if (spans[2]) spans[2].textContent = displayChar(baseComposed);
+			if (spans[3]) spans[3].textContent = "";
+
+			if (baseComposed || shiftComposed) {
+				keyEl.classList.add("key--has-composition");
+				keyEl.classList.remove("key--no-composition");
+			} else {
+				keyEl.classList.add("key--no-composition");
+				keyEl.classList.remove("key--has-composition");
+			}
 		}
 	}
 }
@@ -302,6 +333,7 @@ function exitDeadKeyMode() {
 		for (let i = 0; i < spans.length; i++) {
 			const info = charForKey(currentData, layerOrder[i], keyCode);
 			spans[i].textContent = info ? displayChar(info.char) : "";
+			spans[i].style.visibility = "";
 		}
 	}
 }
