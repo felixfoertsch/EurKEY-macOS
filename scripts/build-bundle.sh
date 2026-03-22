@@ -10,7 +10,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 BUILD_DIR="${PROJECT_DIR}/build"
-BUNDLE_DIR="${BUILD_DIR}/EurKey-macOS.bundle"
+BUNDLE_DIR="${BUILD_DIR}/EurKEY-Next.bundle"
 CONTENTS_DIR="${BUNDLE_DIR}/Contents"
 RESOURCES_DIR="${CONTENTS_DIR}/Resources"
 
@@ -20,11 +20,11 @@ if [[ "${1:-}" == "--version" ]]; then
 	VERSION="${2:?missing version argument}"
 fi
 
-BUNDLE_ID="de.felixfoertsch.keyboardlayout.EurKEY-macOS"
-BUNDLE_NAME="EurKEY-macOS"
+BUNDLE_ID="de.felixfoertsch.keyboardlayout.EurKEY-Next"
+BUNDLE_NAME="EurKEY-Next"
 
-# layout versions to include
-VERSIONS=("v1.2" "v1.3" "v1.4" "v2.0")
+# layout names to include (EurKEY Next is the main layout, others are legacy versions)
+LAYOUTS=("EurKEY Next" "EurKEY v1.4" "EurKEY v1.3" "EurKEY v1.2")
 
 SRC_DIR="${PROJECT_DIR}/src"
 
@@ -39,9 +39,9 @@ bash "${SCRIPT_DIR}/build-icons.sh"
 rm -rf "${BUNDLE_DIR}"
 mkdir -p "${RESOURCES_DIR}"
 
-for ver in "${VERSIONS[@]}"; do
-	cp "${SRC_DIR}/keylayouts/EurKEY ${ver}.keylayout" "${RESOURCES_DIR}/"
-	cp "${SRC_DIR}/icons/EurKEY ${ver}.icns" "${RESOURCES_DIR}/"
+for layout in "${LAYOUTS[@]}"; do
+	cp "${SRC_DIR}/keylayouts/${layout}.keylayout" "${RESOURCES_DIR}/"
+	cp "${SRC_DIR}/icons/${layout}.icns" "${RESOURCES_DIR}/"
 done
 
 for lang in en de es; do
@@ -74,15 +74,14 @@ PLIST_VERSION
 
 echo "	<string>${VERSION}</string>" >> "${CONTENTS_DIR}/Info.plist"
 
-# add KLInfo for each version
-for ver in "${VERSIONS[@]}"; do
-	layout_name="EurKEY ${ver}"
-	# generate input source ID: bundle id + layout name with spaces removed, lowercased
-	source_id_suffix=$(echo "eurkey${ver}" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+# add KLInfo for each layout
+for layout in "${LAYOUTS[@]}"; do
+	# generate input source ID: bundle id + layout name lowercased, spaces removed
+	source_id_suffix=$(echo "${layout}" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
 	source_id="${BUNDLE_ID}.${source_id_suffix}"
 
 	cat >> "${CONTENTS_DIR}/Info.plist" << KLINFO_ENTRY
-	<key>KLInfo_${layout_name}</key>
+	<key>KLInfo_${layout}</key>
 	<dict>
 		<key>TICapsLockLanguageSwitchCapable</key>
 		<true/>
@@ -101,7 +100,7 @@ cat >> "${CONTENTS_DIR}/Info.plist" << 'PLIST_FOOTER'
 </plist>
 PLIST_FOOTER
 
-echo "Generated Info.plist with ${#VERSIONS[@]} layout entries"
+echo "Generated Info.plist with ${#LAYOUTS[@]} layout entries"
 
 # --- generate version.plist ---
 cat > "${CONTENTS_DIR}/version.plist" << VPLIST

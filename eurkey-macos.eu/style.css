@@ -177,6 +177,10 @@ img {
 	font-size: 1rem;
 	font-weight: 600;
 	margin-bottom: 0.5rem;
+	min-height: 3.2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .feature-card p {

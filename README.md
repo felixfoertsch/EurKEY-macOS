@@ -1,8 +1,8 @@
-# EurKEY-macOS
+# EurKEY Next
 
 The keyboard layout for Europeans, coders, and translators. This repo contains a **modified version** of the EurKEY base layout for macOS, bundling multiple versions so users can pick what they need.
 
-EurKEY-macOS targets MacBooks with the physical English International keyboard (ISO) instead of the ANSI layout from the official upstream. Since it is an ISO layout, it has one additional key (`` ` ``) and the big Enter key.
+EurKEY Next works with both ISO and ANSI keyboards. It targets the physical English International keyboard found on European MacBooks (ISO) but is fully compatible with US ANSI keyboards. The ISO key between left Shift and Z (**`§`**/**`±`**) does not exist on ANSI — these characters are accessible via the **`⌥\`** dead key: **`⌥\`** **`s`** → §, **`⌥\`** **`S`** → ±.
 
 The keyboard layout should be compatible with the other ISO layouts typically available in Europe (e.g., German ISO). However, the printed keys will obviously be different. I tested the layout on the current tenkeyless MacBook keyboard (MacBook Air 2024). Working numpad keys are therefore not guaranteed.
 
@@ -10,34 +10,34 @@ The keyboard layout should be compatible with the other ISO layouts typically av
 
 The bundle ships 4 layout versions:
 
-| Version | Description |
-| ------- | ----------- |
-| **v1.3** | Official EurKEY spec implementation. **Recommended for most users.** |
-| **v1.2** | Legacy version based on [Leonardo Schenkel's port](https://github.com/lbschenkel/EurKEY-Mac). Predates the v1.3 spec (no `¬` dead key, `§` instead of `ẞ` on Option+Shift+S). |
-| **v1.4** | v1.3 with `ẞ` (capital sharp s) on Caps+`§` key. |
-| **v2.0** | Custom edition — complete rework. Every key configures exactly as printed on the MacBook keyboard. Removes left/right modifier key distinction. New monochrome template icon. |
+| Version         | Description                                                                                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **EurKEY Next** | Every key configures exactly as printed on the MacBook keyboard. Removes left/right modifier key distinction. Monochrome template icon. |
+| **v1.4**        | v1.3 with swapped super/subscript numbers: **`⌥m`** **`1`**…**`0`** produces subscript (₁…₀), **`⌥m`** **`⇧1`**…**`⇧0`** produces superscript (¹…⁰). |
+| **v1.3**        | Official EurKEY spec implementation.                                                                                                                                                     |
+| **v1.2**        | Legacy version based on [Leonardo Schenkel's port](https://github.com/lbschenkel/EurKEY-Mac). Predates the v1.3 spec (no **`⌥\`** dead key, § instead of ẞ on **`⌥⇧S`**). |
 
 ## Installation
 
-### From DMG (recommended)
+### From DMG
 
-1. Download the latest `EurKEY-macOS-YYYY.MM.DD.dmg` from [Releases](https://github.com/felixfoertsch/EurKEY-macOS/releases).
+1. Download the latest `EurKEY-Next-YYYY.MM.DD.dmg` from [Releases](https://github.com/felixfoertsch/EurKEY-macOS/releases).
 2. Open the DMG.
-3. Drag `EurKey-macOS.bundle` to the `Install Here (Keyboard Layouts)` folder.
+3. Drag `EurKEY-Next.bundle` to the `Install Here (Keyboard Layouts)` folder.
 4. Log out and back in (or restart).
-5. System Settings → Keyboard → Input Sources → click `+` → select the EurKEY version you want.
+5. System Settings → Keyboard → Input Sources → click `+` → select EurKEY Next.
 
 ### Manual
 
 1. Download or clone this repo.
-2. Copy `EurKey-macOS.bundle` to `/Library/Keyboard Layouts/` (system-wide) or `~/Library/Keyboard Layouts/` (user-only).
+2. Copy `EurKEY-Next.bundle` to `/Library/Keyboard Layouts/` (system-wide) or `~/Library/Keyboard Layouts/` (user-only).
 3. Log out and back in.
-4. System Settings → Keyboard → Input Sources → click `+` → select EurKEY.
+4. System Settings → Keyboard → Input Sources → click `+` → select EurKEY Next.
 
 <img src="eurkey-macos.eu/img/1-input-sources.png" width="300" alt="System preferences showing the edit button for input sources.">
 <img src="eurkey-macos.eu/img/2-add-layout.png" width="300" alt="Dialogue to add a new input source.">
-<img src="eurkey-macos.eu/img/3-select-eurkey.png" width="300" alt="EurKEY in the input sources list.">
-<img src="eurkey-macos.eu/img/4-select-input-method.png" width="300" alt="Selecting EurKEY from the menu bar dropdown.">
+<img src="eurkey-macos.eu/img/3-select-eurkey.png" width="300" alt="EurKEY Next in the input sources list.">
+<img src="eurkey-macos.eu/img/4-select-input-method.png" width="300" alt="Selecting EurKEY Next from the menu bar dropdown.">
 
 ## Validation
 
@@ -48,7 +48,7 @@ The project includes automated validation to catch regressions. The validation s
 python3 scripts/validate_layouts.py
 
 # parse a single layout to JSON
-python3 scripts/parse_keylayout.py "EurKey-macOS.bundle/Contents/Resources/EurKEY v1.3.keylayout" --summary
+python3 scripts/parse_keylayout.py "EurKEY-Next.bundle/Contents/Resources/EurKEY v1.3.keylayout" --summary
 
 # build the bundle (validates + generates Info.plist)
 bash scripts/build-bundle.sh
@@ -57,33 +57,23 @@ bash scripts/build-bundle.sh
 bash scripts/build-dmg.sh
 ```
 
-## Dead key compositions (v2.0)
+## Dead key compositions (EurKEY Next)
 
-v2.0 renames all dead key states to their initializing key combination:
+EurKEY Next renames all dead key states to their initializing key combination:
 
 | Key combination | Dead key symbol |
 | --------------- | --------------- |
-| ⌥`` ` ``       | `` ` ``         |
-| ⌥⇧`` ` ``     | ~               |
-| ⌥'              | ´               |
-| ⌥⇧'            | ¨               |
-| ⌥6              | ^               |
-| ⌥⇧6            | ˇ               |
-| ⌥7              | ˚               |
-| ⌥⇧7            | ¯               |
-| ⌥m              | α               |
-| ⌥⇧m            | 𝕄               |
-| ⌥\              | ¬               |
-
-## Customization with Karabiner-Elements
-
-macOS `.keylayout` files cannot distinguish between the FN key and other modifiers, and cannot remap FN to act as a custom modifier. To use FN (or any other key) as an additional modifier layer, use [Karabiner-Elements](https://karabiner-elements.pqrs.org/):
-
-1. Install Karabiner-Elements.
-2. In **Simple Modifications**, remap `fn` to a modifier key (e.g., `right_option`).
-3. In **Complex Modifications**, add rules that map your desired key combinations to Unicode character outputs.
-
-[Hammerspoon](https://www.hammerspoon.org/) is an alternative for Lua-based automation but does not intercept keystrokes at the same level as Karabiner.
+| **`` ⌥` ``**    | `` ` ``         |
+| **`` ⌥⇧` ``**   | ~               |
+| **`⌥'`**        | ´               |
+| **`⌥⇧'`**       | ¨               |
+| **`⌥6`**        | ^               |
+| **`⌥⇧6`**       | ˇ               |
+| **`⌥7`**        | ˚               |
+| **`⌥⇧7`**       | ¯               |
+| **`⌥m`**        | α               |
+| **`⌥⇧m`**       | 𝕄               |
+| **`⌥\`**        | ¬               |
 
 ## Known issues
 
@@ -99,50 +89,6 @@ Template icons switch color with the system theme (dark/light). Ukelele's GUI ch
 ```
 
 The build script (`scripts/build-bundle.sh`) generates `Info.plist` with this flag set correctly for all layout versions.
-
-## Changelog
-
-### v2.0 (WIP)
-
-#### Layout
-
-- Configure every key exactly as printed on the MacBook keyboard (ISO, English International).
-- Remove distinction between left/right modifier keys.
-- Rename all dead key states to their initializing key combination for easier identification.
-- Fix Greek dead key terminator (`Ω` → `α`) to match official EurKEY spec.
-- Fix modifier key order to Apple canonical: Option+Shift (not Shift+Option).
-- Enable CapsLock language switch for all layouts.
-- Remove duplicate compositions: `§` from Navigators, `±` from Option+Shift+§, `±` from Mathematicians on `-`, terminator duplicates on `5`.
-- Change Mathematicians (⌥⇧m) dead key terminator from invisible space to `𝕄`.
-
-#### Website
-
-- Replace Hugo with lightweight static website.
-- Add interactive keyboard viewer with modifier layer preview, dead key compositions.
-- Support multiple dead keys per key with click cycling (e.g., key 6: circumflex → háček → exit).
-- Add layout PDF downloads.
-- Add EU badge template icons for v1.2, v1.3, v1.4 matching Apple's built-in keyboard layout icon style.
-- Add SVG feature card icons (dead keys, ISO enter, versions, install).
-
-#### DevOps
-
-- Use `*.bundle` format to group layout versions.
-- Restructure project: track `src/`, `fonts/` as source, generate bundle at build time.
-- Add `build-bundle.sh`, `build-dmg.sh`, `build-icons.sh`, `validate_layouts.py`, `parse_keylayout.py`.
-- Add GitHub Actions workflows for build, release, website deployment.
-- Add new monochrome macOS template icon that switches color with the system theme.
-
-### v1.4
-
-- Adds `ẞ` (capital sharp s) on Caps+`§` key.
-
-### v1.3
-
-- Implements the layout according to [spec](https://eurkey.steffen.bruentjen.eu/changelog.html). Based on [Leonardo Schenkel's version 1.2](https://github.com/lbschenkel/EurKEY-Mac).
-
-### v1.2
-
-- Original macOS port by [Leonardo Brondani Schenkel](https://github.com/lbschenkel/EurKEY-Mac).
 
 ## Attribution
 

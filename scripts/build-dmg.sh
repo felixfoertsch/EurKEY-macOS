@@ -12,7 +12,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 BUILD_DIR="${PROJECT_DIR}/build"
-BUNDLE_DIR="${BUILD_DIR}/EurKey-macOS.bundle"
+BUNDLE_DIR="${BUILD_DIR}/EurKEY-Next.bundle"
 
 # parse arguments
 VERSION="${1:-$(date +%Y.%m.%d)}"
@@ -20,7 +20,7 @@ if [[ "${1:-}" == "--version" ]]; then
 	VERSION="${2:?missing version argument}"
 fi
 
-DMG_NAME="EurKEY-macOS-${VERSION}"
+DMG_NAME="EurKEY-Next-${VERSION}"
 DMG_PATH="${BUILD_DIR}/${DMG_NAME}.dmg"
 STAGING_DIR="${BUILD_DIR}/dmg-staging"
 
@@ -41,7 +41,7 @@ mkdir -p "${STAGING_DIR}"
 cp -R "${BUNDLE_DIR}" "${STAGING_DIR}/"
 
 # copy layout PDFs
-cp "${BUILD_DIR}"/eurkey-*-layout.pdf "${STAGING_DIR}/"
+cp "${BUILD_DIR}"/eurkey-*layout.pdf "${STAGING_DIR}/"
 
 # create symlink to installation target
 ln -s "/Library/Keyboard Layouts" "${STAGING_DIR}/Install Here (Keyboard Layouts)"

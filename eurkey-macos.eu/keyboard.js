@@ -67,14 +67,15 @@ const DEAD_KEY_NAMES = {
 };
 
 const cache = new Map();
-let currentVersion = "v2.0";
+let currentVersion = "next";
 let currentData = null;
 let currentDeadKey = null;
 let keyElements = new Map();
 
 async function loadVersion(version) {
 	if (cache.has(version)) return cache.get(version);
-	const resp = await fetch("data/eurkey-" + version + ".json");
+	const file = "data/eurkey-" + version + ".json";
+	const resp = await fetch(file);
 	if (!resp.ok) throw new Error("Failed to load " + version);
 	const data = await resp.json();
 	cache.set(version, data);
@@ -419,7 +420,8 @@ function updatePdfLink() {
 	const link = document.getElementById("pdf-download");
 	if (!link) return;
 	link.href = "pdf/eurkey-" + currentVersion + "-layout.pdf";
-	link.textContent = "Download " + currentVersion + " PDF";
+	const label = currentVersion === "next" ? "EurKEY Next" : currentVersion;
+	link.textContent = "Download " + label + " PDF";
 }
 
 function initTabs() {

@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'EurKey-macOS.bundle/**'
+      - 'EurKEY-Next.bundle/**'
       - 'scripts/**'
       - 'spec/**'
   pull_request:
     paths:
-      - 'EurKey-macOS.bundle/**'
+      - 'EurKEY-Next.bundle/**'
       - 'scripts/**'
       - 'spec/**'
 
@@ -40,5 +40,5 @@ jobs:
       - name: upload DMG
         uses: actions/upload-artifact@v4
         with:
-          name: EurKEY-macOS-DMG
+          name: EurKEY-Next-DMG
           path: build/*.dmg

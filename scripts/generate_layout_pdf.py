@@ -443,20 +443,22 @@ def generate_pdf(version, output_dir):
 	"""Generate a PDF for the given layout version."""
 	src_dir = Path(__file__).parent.parent / "src" / "keylayouts"
 	keylayout = src_dir / f"EurKEY {version}.keylayout"
+	display_name = f"EurKEY {version}"
+	pdf_name = f"eurkey-{version.lower()}-layout.pdf"
 
 	if not keylayout.exists():
 		print(f"ERROR: {keylayout} not found")
 		return False
 
-	print(f"Generating PDF for EurKEY {version}...")
+	print(f"Generating PDF for {display_name}...")
 	data = parse_keylayout(str(keylayout), keyboard_type=0)
 
-	pdf = LayoutPDF(f"EurKEY {version}")
+	pdf = LayoutPDF(display_name)
 	pdf.generate(data)
 
 	out = Path(output_dir)
 	out.mkdir(parents=True, exist_ok=True)
-	output_path = out / f"eurkey-{version}-layout.pdf"
+	output_path = out / pdf_name
 	pdf.output(str(output_path))
 	print(f"  Written: {output_path}")
 	return True
@@ -466,7 +468,7 @@ def main():
 	parser = argparse.ArgumentParser(description="Generate keyboard layout PDFs")
 	parser.add_argument(
 		"--version", "-v", nargs="*",
-		default=["v1.2", "v1.3", "v1.4", "v2.0"],
+		default=["Next", "v1.4", "v1.3", "v1.2"],
 		help="Layout versions to generate (default: all)",
 	)
 	default_output = str(Path(__file__).parent.parent / "build")

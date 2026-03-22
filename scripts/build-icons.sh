@@ -4,7 +4,7 @@
 # Requires: rsvg-convert (librsvg), iconutil (macOS built-in)
 #
 # The v1.2/v1.3/v1.4 icon is a template badge with "EU" text.
-# The v2.0 icon is a monochrome star ring (managed separately).
+# The EurKEY Next icon is a monochrome star ring (managed separately).
 #
 # Usage: bash scripts/build-icons.sh
 set -euo pipefail
@@ -54,7 +54,7 @@ rm "${ICONSET}"/tmp_*.png
 ICNS_PATH="${ICON_DIR}/badge-eu.icns"
 iconutil --convert icns --output "${ICNS_PATH}" "${ICONSET}"
 
-# install for v1.2, v1.3, v1.4 (v2.0 keeps its own icon)
+# install for v1.2, v1.3, v1.4 (EurKEY Next keeps its own icon)
 cp "${ICNS_PATH}" "${ICON_DIR}/EurKEY v1.2.icns"
 cp "${ICNS_PATH}" "${ICON_DIR}/EurKEY v1.3.icns"
 cp "${ICNS_PATH}" "${ICON_DIR}/EurKEY v1.4.icns"

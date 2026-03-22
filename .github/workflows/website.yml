@@ -38,7 +38,9 @@ jobs:
       - name: Generate layout JSON
         run: |
           mkdir -p eurkey-macos.eu/data
-          for ver in v1.2 v1.3 v1.4 v2.0; do
+          python3 scripts/parse_keylayout.py "src/keylayouts/EurKEY Next.keylayout" \
+            -o "eurkey-macos.eu/data/eurkey-next.json"
+          for ver in v1.2 v1.3 v1.4; do
             python3 scripts/parse_keylayout.py "src/keylayouts/EurKEY ${ver}.keylayout" \
               -o "eurkey-macos.eu/data/eurkey-${ver}.json"
           done

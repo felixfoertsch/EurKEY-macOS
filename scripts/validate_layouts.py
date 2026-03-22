@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from parse_keylayout import parse_keylayout, TYPING_KEY_CODES, MODIFIER_LABELS, KEY_CODE_NAMES
 
-BUNDLE_DIR = Path(__file__).parent.parent / "build" / "EurKey-macOS.bundle" / "Contents" / "Resources"
+BUNDLE_DIR = Path(__file__).parent.parent / "build" / "EurKEY-Next.bundle" / "Contents" / "Resources"
 
 # modifier indices that contain meaningful typing output
 # (exclude index 6 = Option+Command and 7 = Control — these are system shortcuts)
@@ -184,27 +184,25 @@ def format_char_display(c):
 V1_2_EXCEPTIONS = {
 	# Option+Shift S: v1.2 has § where v1.3 has ẞ (capital sharp s)
 	"4:1": {"output": "§"},
+	"5:1": {"output": "§"},           # Caps+Option S: mirrors Option+Shift (§)
 	# v1.2 does not have the ¬ (negation) dead key — added in v1.3
 	# instead, Option+- has the © dead key, and Option+\ outputs plain ¬
 	"_dead_key_skip": ["dead: ¬"],
 	"3:27": {"deadKey": "dead: ©"},   # Option+-: © dead key instead of ¬ dead key
 	"3:42": {"output": "¬"},          # Option+\: plain ¬ instead of ¬ dead key
 	"4:27": {"output": "№"},          # Option+Shift+-: № instead of ✗
-	"5:27": {"deadKey": "dead: ©"},   # Caps+Option+-: © dead key instead of ¬ dead key
+	"5:27": {"output": "№"},          # Caps+Option+-: mirrors Option+Shift (№)
 }
 
 # v1.4 differences from v1.3:
-# - §/` key (code 10) in Caps/Caps+Option outputs ẞ instead of §
-# - ¬ dead key has an extra ¬ composition (self-referencing)
+# - swaps super/subscript numbers in α dead key
+# - ¬ dead key has an extra ¬ composition (self-referencing, harmless Ukelele artifact)
 V1_4_EXCEPTIONS = {
-	"2:10": {"output": "ẞ"},   # Caps: §/` → ẞ (capital sharp s)
-	"5:10": {"output": "ẞ"},   # Caps+Option: §/` → ẞ
-	"5:27": {"output": ""},    # Caps+Option+-: no output (missing ¬ dead key in this layer)
 	"dead:dead: ¬:extra:¬": True,  # extra ¬ composition in negation dead key
 }
 
-# v2.0 is a custom edition — skip validation for now, just document diffs
-V2_0_EXCEPTIONS = {
+# EurKEY Next (main edition) — skip validation, custom layout
+EURKEY_NEXT_EXCEPTIONS = {
 	"_skip_validation": True,
 }
 
@@ -212,7 +210,7 @@ VERSIONS = {
 	"v1.2": {"file": "v1.2", "exceptions": V1_2_EXCEPTIONS, "label": "EurKEY v1.2"},
 	"v1.3": {"file": "v1.3", "exceptions": {}, "label": "EurKEY v1.3 (reference)"},
 	"v1.4": {"file": "v1.4", "exceptions": V1_4_EXCEPTIONS, "label": "EurKEY v1.4"},
-	"v2.0": {"file": "v2.0", "exceptions": V2_0_EXCEPTIONS, "label": "EurKEY v2.0 (custom)"},
+	"next": {"file": "Next", "exceptions": EURKEY_NEXT_EXCEPTIONS, "label": "EurKEY Next"},
 }
 
 

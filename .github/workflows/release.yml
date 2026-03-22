@@ -39,33 +39,49 @@ jobs:
       - name: create GitHub release
         uses: softprops/action-gh-release@v2
         with:
-          name: EurKEY-macOS ${{ steps.version.outputs.version }}
-          files: build/EurKEY-macOS-${{ steps.version.outputs.version }}.dmg
+          name: EurKEY Next ${{ steps.version.outputs.version }}
+          files: build/EurKEY-Next-${{ steps.version.outputs.version }}.dmg
           body: |
-            ## Changes
+            ## EurKEY Next
 
-            - Fix modifier key order to Apple canonical: Option+Shift (not Shift+Option)
-            - Add EU badge template icons for v1.2, v1.3, v1.4 matching Apple's built-in style
-            - Add icon build pipeline from SVG source
-            - Add interactive keyboard viewer to website
-            - Add layout PDF downloads to website
-            - Replace Hugo with lightweight static website
-            - Fix Greek dead key terminator (Ω → α) to match official spec
-            - Enable CapsLock language switch for all layouts
-            - Rename create-dmg.sh → build-dmg.sh
+            - **ANSI compatibility:** the ISO-only key between left Shift and Z does not exist on ANSI keyboards. Its characters § and ± are now accessible via the `⌥\` dead key (`⌥\` `s` → §, `⌥\` `S` → ±).
+            - Normalize Caps Lock: Caps Lock = Shift, no special bindings.
+            - Configure every key exactly as printed on the MacBook keyboard (ISO, English International).
+            - Remove distinction between left/right modifier keys.
+            - Rename all dead key states to their initializing key combination for easier identification.
+            - Fix Greek dead key terminator (Ω → α) to match official EurKEY spec.
+            - Fix modifier key order to Apple canonical: Option+Shift (not Shift+Option).
+            - Clean up duplicate dead key compositions.
+            - Change Mathematicians (`⌥⇧m`) dead key terminator from invisible space to 𝕄.
+
+            ## v1.4
+
+            - Normalize Caps Lock: Caps Lock = Shift, no special bindings.
+            - Fix accidental Caps Lock changes from previous release.
+
+            ## v1.3
+
+            - Normalize Caps Lock: Caps Lock = Shift, no special bindings.
+
+            ## v1.2
+
+            - Normalize Caps Lock: Caps Lock = Shift, no special bindings.
+
+            ## Project
+
+            - Rename v2.0 → EurKEY Next.
+            - Rename bundle to `EurKEY-Next.bundle`.
+            - New lightweight static website at eurkey-macos.eu.
+            - Interactive keyboard viewer with modifier layer preview and dead key compositions.
+            - Layout PDF downloads.
+            - New monochrome macOS template icon.
+            - Restructure project with automated build, validation, and release pipelines.
 
             ## Installation
 
-            1. Download `EurKEY-macOS-${{ steps.version.outputs.version }}.dmg`
+            1. Download `EurKEY-Next-${{ steps.version.outputs.version }}.dmg`
             2. Open the DMG
-            3. Drag `EurKey-macOS.bundle` to the `Install Here (Keyboard Layouts)` folder
+            3. Drag `EurKEY-Next.bundle` to the `Install Here (Keyboard Layouts)` folder
             4. Log out and back in (or restart)
-            5. System Settings → Keyboard → Input Sources → Add → Select EurKEY
-
-            ## Included layouts
-
-            - **EurKEY v1.2** — legacy version
-            - **EurKEY v1.3** — official spec implementation
-            - **EurKEY v1.4** — v1.3 with ẞ on Caps+§
-            - **EurKEY v2.0** — custom edition
-          generate_release_notes: true
+            5. System Settings → Keyboard → Input Sources → Add → Select EurKEY Next
+          generate_release_notes: false
